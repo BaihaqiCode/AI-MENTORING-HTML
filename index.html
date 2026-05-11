@@ -1,0 +1,2265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Mentoring — Mini Brand Guideline 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue-primary: #0A84FF;
+  --blue-electric: #0066FF;
+  --blue-royal: #123DFF;
+  --navy: #0A1B5E;
+  --purple: #8B5CFF;
+  --purple-soft: #A66CFF;
+  --cyan: #37D6FF;
+  --white-bg: #F8FAFF;
+  --gray-light: #EDEFF5;
+  --text-dark: #101828;
+  --text-mid: #344054;
+  --text-muted: #667085;
+  --grad-main: linear-gradient(135deg, #0A84FF 0%, #8B5CFF 100%);
+  --grad-cyan: linear-gradient(135deg, #0066FF 0%, #37D6FF 100%);
+  --grad-deep: linear-gradient(135deg, #0A1B5E 0%, #0066FF 100%);
+  --grad-glow: linear-gradient(135deg, #123DFF 0%, #8B5CFF 60%, #37D6FF 100%);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: #0d0d1a;
+  color: var(--text-dark);
+}
+
+/* ── SLIDE SYSTEM ── */
+.slide {
+  width: 1280px;
+  min-height: 720px;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto 48px;
+  border-radius: 20px;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.6);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── PRINT / SCREEN TOGGLE ── */
+@media print {
+  body { background: white; }
+  .slide { margin: 0; box-shadow: none; border-radius: 0; page-break-after: always; width: 100%; min-height: 100vh; }
+  .nav-bar { display: none; }
+}
+
+/* ── NAVIGATION ── */
+.nav-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: rgba(10,10,26,0.95);
+  backdrop-filter: blur(12px);
+  padding: 16px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+  border-bottom: 1px solid rgba(10,132,255,0.2);
+}
+.nav-logo {
+  font-family: 'Sora', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  background: var(--grad-main);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.5px;
+}
+.nav-label {
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.nav-toc {
+  display: flex;
+  gap: 8px;
+}
+.nav-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.nav-dot:hover { background: var(--blue-primary); transform: scale(1.3); }
+
+.page-label {
+  position: absolute;
+  top: 32px; right: 40px;
+  font-family: 'Sora', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.4;
+}
+
+/* ═══════════════════════════════════════
+   SLIDE 01 — COVER
+═══════════════════════════════════════ */
+.s01 {
+  background: var(--navy);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.s01-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 15% 50%, rgba(10,132,255,0.25) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 70% at 85% 50%, rgba(139,92,255,0.2) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 50% 10%, rgba(55,214,255,0.15) 0%, transparent 50%);
+}
+.s01-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(10,132,255,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10,132,255,0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.s01-content { position: relative; z-index: 2; }
+.s01-eyebrow {
+  font-family: 'Sora', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.s01-eyebrow::before, .s01-eyebrow::after {
+  content: '';
+  width: 40px; height: 1px;
+  background: var(--cyan);
+  opacity: 0.5;
+}
+
+.s01-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 72px;
+  font-weight: 800;
+  line-height: 1.0;
+  background: linear-gradient(135deg, #fff 0%, #a8c8ff 40%, var(--cyan) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -3px;
+  margin-bottom: 16px;
+}
+.s01-sub {
+  font-size: 18px;
+  color: rgba(255,255,255,0.5);
+  font-weight: 400;
+  margin-bottom: 48px;
+  letter-spacing: 0.3px;
+}
+.s01-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.3);
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.s01-meta span { display: flex; align-items: center; gap: 6px; }
+.s01-meta .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--blue-primary); }
+.s01-orbit {
+  position: absolute;
+  width: 600px; height: 600px;
+  border: 1px solid rgba(10,132,255,0.1);
+  border-radius: 50%;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  animation: spin 30s linear infinite;
+}
+.s01-orbit2 {
+  position: absolute;
+  width: 900px; height: 900px;
+  border: 1px solid rgba(139,92,255,0.07);
+  border-radius: 50%;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  animation: spin 50s linear infinite reverse;
+}
+@keyframes spin { from { transform: translate(-50%,-50%) rotate(0deg); } to { transform: translate(-50%,-50%) rotate(360deg); } }
+
+/* ═══════════════════════════════════════
+   SLIDE 02 — BRAND OVERVIEW
+═══════════════════════════════════════ */
+.s02 {
+  background: var(--white-bg);
+  padding: 64px 80px;
+  flex-direction: row;
+  gap: 0;
+}
+.s02-left {
+  width: 400px; flex-shrink: 0;
+  background: var(--navy);
+  border-radius: 20px;
+  padding: 48px 44px;
+  position: relative;
+  overflow: hidden;
+}
+.s02-left-bg {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 20% 80%, rgba(10,132,255,0.3) 0%, transparent 60%),
+              radial-gradient(ellipse 60% 50% at 80% 20%, rgba(139,92,255,0.25) 0%, transparent 50%);
+}
+.s02-right {
+  flex: 1;
+  padding: 0 0 0 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.section-tag {
+  display: inline-block;
+  font-family: 'Sora', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 100px;
+  margin-bottom: 20px;
+}
+.tag-blue { background: rgba(10,132,255,0.12); color: var(--blue-primary); }
+.tag-purple { background: rgba(139,92,255,0.12); color: var(--purple); }
+.tag-cyan { background: rgba(55,214,255,0.12); color: #0099CC; }
+.tag-white { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.7); }
+
+.slide-heading {
+  font-family: 'Sora', sans-serif;
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -1.2px;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+}
+.slide-heading .accent { background: var(--grad-main); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.slide-body {
+  font-size: 15px;
+  color: var(--text-mid);
+  line-height: 1.75;
+  font-weight: 400;
+}
+.overview-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 28px;
+}
+.ov-card {
+  background: white;
+  border-radius: 14px;
+  padding: 20px;
+  border: 1px solid var(--gray-light);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.ov-card-icon {
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.ov-card h4 {
+  font-family: 'Sora', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+.ov-card p { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+
+/* S02 left panel content */
+.logo-showcase {
+  position: relative; z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+.logo-item {
+  width: 100%;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.logo-item.on-white { background: white; }
+.logo-item.on-dark { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); }
+.logo-circle {
+  width: 56px; height: 56px;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+.logo-text-info h5 {
+  font-family: 'Sora', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+.logo-text-info p { font-size: 11px; opacity: 0.5; }
+
+/* ═══════════════════════════════════════
+   SLIDE 03 — BRAND PERSONALITY
+═══════════════════════════════════════ */
+.s03 {
+  background: var(--navy);
+  padding: 64px 80px;
+}
+.s03-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 50% 80% at 95% 50%, rgba(139,92,255,0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 50% at 5% 20%, rgba(10,132,255,0.12) 0%, transparent 50%);
+}
+.personality-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-top: 40px;
+}
+.pers-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 28px 20px;
+  text-align: center;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.pers-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  border-radius: 16px 16px 0 0;
+}
+.pers-card.c1::before { background: var(--grad-cyan); }
+.pers-card.c2::before { background: var(--grad-main); }
+.pers-card.c3::before { background: linear-gradient(90deg, var(--purple), var(--purple-soft)); }
+.pers-card.c4::before { background: linear-gradient(90deg, var(--blue-royal), var(--blue-primary)); }
+.pers-card.c5::before { background: linear-gradient(90deg, var(--cyan), var(--blue-primary)); }
+.pers-icon { font-size: 32px; margin-bottom: 14px; display: block; }
+.pers-top {
+  font-family: 'Sora', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 6px;
+}
+.pers-bottom {
+  font-size: 11px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.5;
+}
+.tone-section {
+  margin-top: 40px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 32px 40px;
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+.tone-label {
+  font-family: 'Sora', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--cyan);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.tone-chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip {
+  padding: 8px 18px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid;
+}
+.chip-blue { border-color: rgba(10,132,255,0.4); color: var(--blue-primary); background: rgba(10,132,255,0.08); }
+.chip-purple { border-color: rgba(139,92,255,0.4); color: var(--purple-soft); background: rgba(139,92,255,0.08); }
+.chip-cyan { border-color: rgba(55,214,255,0.4); color: var(--cyan); background: rgba(55,214,255,0.08); }
+
+/* ═══════════════════════════════════════
+   SLIDE 04 — COLOR PALETTE
+═══════════════════════════════════════ */
+.s04 {
+  background: var(--white-bg);
+  padding: 56px 80px;
+}
+.color-section { margin-top: 36px; }
+.color-section-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+.primary-swatches {
+  display: flex;
+  gap: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  height: 120px;
+  margin-bottom: 32px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+.swatch {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 14px 16px;
+  cursor: default;
+  transition: flex 0.3s ease;
+}
+.swatch:hover { flex: 1.5; }
+.swatch-name { font-family: 'Sora', sans-serif; font-size: 11px; font-weight: 700; }
+.swatch-hex { font-size: 10px; opacity: 0.7; font-family: monospace; }
+
+.secondary-row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+  margin-bottom: 32px;
+}
+.sec-swatch {
+  border-radius: 12px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px 12px;
+}
+.gradients-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.grad-card {
+  border-radius: 14px;
+  height: 80px;
+  display: flex;
+  align-items: flex-end;
+  padding: 12px 16px;
+  position: relative;
+  overflow: hidden;
+}
+.grad-card-label {
+  font-family: 'Sora', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: white;
+  position: relative; z-index: 1;
+}
+.grad-card-desc { font-size: 10px; color: rgba(255,255,255,0.6); font-size: 9px; margin-top: 2px; }
+
+/* ═══════════════════════════════════════
+   SLIDE 05 — TYPOGRAPHY
+═══════════════════════════════════════ */
+.s05 {
+  background: var(--navy);
+  padding: 56px 80px;
+  overflow: hidden;
+}
+.s05-bg {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 60% at 80% 80%, rgba(139,92,255,0.12) 0%, transparent 60%);
+}
+.typo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 36px;
+}
+.typo-panel {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 36px;
+}
+.typo-role {
+  font-family: 'Sora', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 20px;
+}
+.heading-demo {
+  font-family: 'Sora', sans-serif;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  background: linear-gradient(135deg, #fff 0%, #a8c8ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
+}
+.body-demo {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+.scale-table { width: 100%; border-collapse: collapse; }
+.scale-table tr { border-bottom: 1px solid rgba(255,255,255,0.06); }
+.scale-table td { padding: 10px 0; font-size: 12px; }
+.scale-table td:first-child { color: rgba(255,255,255,0.4); font-family: 'Sora', sans-serif; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; width: 100px; }
+.scale-table td:last-child { color: rgba(255,255,255,0.6); }
+.scale-table .scale-example { font-family: 'Sora', sans-serif; font-weight: 700; color: white; }
+
+/* ═══════════════════════════════════════
+   SLIDE 06 — VISUAL STYLE
+═══════════════════════════════════════ */
+.s06 {
+  background: var(--white-bg);
+  padding: 56px 80px;
+}
+.style-principles {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 36px;
+  margin-bottom: 28px;
+}
+.style-card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px 20px;
+  border: 1px solid var(--gray-light);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  text-align: center;
+}
+.style-card .icon-box {
+  width: 52px; height: 52px;
+  border-radius: 14px;
+  margin: 0 auto 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px;
+}
+.style-card h4 {
+  font-family: 'Sora', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+.style-card p { font-size: 11px; color: var(--text-muted); line-height: 1.6; }
+
+.glass-demo {
+  background: var(--navy);
+  border-radius: 20px;
+  padding: 32px 40px;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.glass-demo-bg {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 80% at 20% 50%, rgba(10,132,255,0.2) 0%, transparent 60%),
+              radial-gradient(ellipse 50% 60% at 80% 50%, rgba(139,92,255,0.15) 0%, transparent 60%);
+}
+.glass-card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 16px;
+  padding: 20px 24px;
+  flex: 1;
+  position: relative; z-index: 1;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+.glass-card h5 {
+  font-family: 'Sora', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 6px;
+}
+.glass-card p { font-size: 11px; color: rgba(255,255,255,0.55); }
+.glow-pill {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+.glow-blue { background: rgba(10,132,255,0.25); color: var(--cyan); border: 1px solid rgba(10,132,255,0.4); box-shadow: 0 0 12px rgba(10,132,255,0.3); }
+.glow-purple { background: rgba(139,92,255,0.25); color: var(--purple-soft); border: 1px solid rgba(139,92,255,0.4); box-shadow: 0 0 12px rgba(139,92,255,0.3); }
+
+/* ═══════════════════════════════════════
+   SLIDE 07 — GRAPHIC ELEMENTS
+═══════════════════════════════════════ */
+.s07 {
+  background: var(--navy);
+  padding: 56px 80px;
+}
+.s07-bg {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 40% 60% at 90% 10%, rgba(55,214,255,0.1) 0%, transparent 50%),
+              radial-gradient(ellipse 40% 50% at 10% 90%, rgba(139,92,255,0.12) 0%, transparent 50%);
+}
+.elements-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+  margin-top: 36px;
+  margin-bottom: 28px;
+}
+.el-item {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 20px 14px;
+  text-align: center;
+}
+.el-icon { font-size: 28px; margin-bottom: 8px; display: block; }
+.el-label { font-size: 10px; color: rgba(255,255,255,0.45); font-family: 'Sora', sans-serif; letter-spacing: 0.5px; }
+
+/* Neural network SVG demo */
+.neural-demo {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 20px;
+  padding: 28px 40px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.neural-desc h4 {
+  font-family: 'Sora', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 8px;
+}
+.neural-desc p { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.6; max-width: 300px; }
+.do-dont {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+}
+.do-tag { font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 100px; background: rgba(52,199,89,0.15); color: #34C759; border: 1px solid rgba(52,199,89,0.3); }
+.dont-tag { font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 100px; background: rgba(255,59,48,0.12); color: #FF3B30; border: 1px solid rgba(255,59,48,0.25); }
+
+/* ═══════════════════════════════════════
+   SLIDE 08 — SOCIAL MEDIA SYSTEM
+═══════════════════════════════════════ */
+.s08 {
+  background: var(--white-bg);
+  padding: 56px 80px;
+}
+.social-formats {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-top: 36px;
+  margin-bottom: 28px;
+}
+.format-card {
+  background: white;
+  border-radius: 16px;
+  border: 1.5px solid var(--gray-light);
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+.format-preview {
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: rgba(255,255,255,0.7);
+  font-family: 'Sora', sans-serif;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+}
+.format-info {
+  padding: 14px 14px;
+  border-top: 1px solid var(--gray-light);
+}
+.format-info h5 {
+  font-family: 'Sora', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 3px;
+}
+.format-info p { font-size: 10px; color: var(--text-muted); }
+
+.footer-demo {
+  background: var(--navy);
+  border-radius: 16px;
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+.footer-demo-bg {
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(10,132,255,0.1) 0%, rgba(139,92,255,0.1) 100%);
+}
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative; z-index: 1;
+}
+.footer-brand-icon {
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  background: var(--grad-main);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+}
+.footer-brand-name {
+  font-family: 'Sora', sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  color: white;
+}
+.footer-brand-handle { font-size: 11px; color: rgba(255,255,255,0.45); }
+.footer-socials {
+  display: flex;
+  gap: 12px;
+  position: relative; z-index: 1;
+  align-items: center;
+}
+.footer-social-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+}
+.footer-social-item .s-icon {
+  width: 28px; height: 28px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.1);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px;
+}
+.footer-contact {
+  position: relative; z-index: 1;
+  text-align: right;
+}
+.footer-contact p { font-size: 11px; color: rgba(255,255,255,0.45); line-height: 1.7; }
+.footer-contact .contact-main { font-size: 13px; color: var(--cyan); font-weight: 600; }
+
+/* ═══════════════════════════════════════
+   SLIDE 09 — SOCIAL LAYOUTS MOCKUPS
+═══════════════════════════════════════ */
+.s09 {
+  background: var(--navy);
+  padding: 56px 80px;
+}
+.s09-bg {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 50% 70% at 80% 30%, rgba(10,132,255,0.15) 0%, transparent 60%);
+}
+.mockup-row {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: 24px;
+  margin-top: 36px;
+}
+.mockup-phone-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.mockup-label {
+  font-family: 'Sora', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+}
+.phone-frame {
+  width: 180px;
+  background: #111;
+  border-radius: 28px;
+  border: 3px solid rgba(255,255,255,0.12);
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+.phone-notch {
+  height: 24px;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.notch-pill { width: 60px; height: 10px; background: #222; border-radius: 100px; }
+.phone-screen { width: 100%; }
+
+/* Post mockup — Feed */
+.feed-post {
+  background: white;
+  padding: 0;
+  overflow: hidden;
+}
+.feed-post-header { padding: 10px 12px; display: flex; align-items: center; gap: 8px; }
+.feed-avatar { width: 28px; height: 28px; border-radius: 50%; background: var(--grad-main); }
+.feed-user { font-size: 11px; font-weight: 700; color: #111; }
+.feed-main {
+  width: 100%;
+  aspect-ratio: 4/5;
+  background: var(--grad-main);
+  display: flex;
+  flex-direction: column;
+  padding: 20px 16px;
+  position: relative;
+  overflow: hidden;
+}
+.feed-main-bg {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 80% 20%, rgba(55,214,255,0.3) 0%, transparent 50%),
+              radial-gradient(ellipse 60% 80% at 20% 80%, rgba(139,92,255,0.3) 0%, transparent 50%);
+}
+.feed-logo-mini { font-size: 16px; margin-bottom: auto; position: relative; z-index: 1; }
+.feed-headline { font-family: 'Sora', sans-serif; font-size: 16px; font-weight: 800; color: white; line-height: 1.2; position: relative; z-index: 1; margin-bottom: 8px; letter-spacing: -0.5px; }
+.feed-sub { font-size: 10px; color: rgba(255,255,255,0.65); position: relative; z-index: 1; }
+.feed-footer-strip { background: rgba(0,0,0,0.3); padding: 8px 12px; display: flex; align-items: center; justify-content: space-between; position: relative; z-index: 1; }
+.feed-footer-strip span { font-size: 9px; color: rgba(255,255,255,0.6); }
+.feed-actions { padding: 8px 12px; display: flex; gap: 12px; font-size: 16px; }
+
+/* Story mockup */
+.story-post {
+  background: var(--navy);
+  aspect-ratio: 9/16;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 12px;
+}
+.story-bg {
+  position: absolute; inset: 0;
+  background: linear-gradient(160deg, #0066FF 0%, #8B5CFF 60%, #123DFF 100%);
+}
+.story-bg2 {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 50% at 50% 30%, rgba(55,214,255,0.25) 0%, transparent 60%);
+}
+.story-top { position: relative; z-index: 1; margin-bottom: 12px; }
+.story-progress-bars { display: flex; gap: 3px; margin-bottom: 8px; }
+.story-bar { flex: 1; height: 2px; background: rgba(255,255,255,0.35); border-radius: 100px; }
+.story-bar.active { background: white; }
+.story-avatar-row { display: flex; align-items: center; gap: 6px; }
+.story-av { width: 22px; height: 22px; border-radius: 50%; background: white; border: 1.5px solid rgba(255,255,255,0.5); }
+.story-name { font-size: 10px; color: white; font-weight: 700; }
+.story-time { font-size: 9px; color: rgba(255,255,255,0.5); }
+.story-content { position: relative; z-index: 1; flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 8px; }
+.story-big { font-family: 'Sora', sans-serif; font-size: 22px; font-weight: 800; color: white; line-height: 1.1; letter-spacing: -0.5px; }
+.story-desc { font-size: 11px; color: rgba(255,255,255,0.65); }
+.story-cta {
+  margin-top: auto;
+  position: relative; z-index: 1;
+  background: white;
+  border-radius: 100px;
+  padding: 10px 20px;
+  text-align: center;
+  font-family: 'Sora', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--blue-royal);
+}
+
+/* Carousel mockup */
+.carousel-slide {
+  background: var(--white-bg);
+  width: 100%;
+  aspect-ratio: 1;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 18px 16px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+.carousel-num {
+  font-family: 'Sora', sans-serif;
+  font-size: 36px;
+  font-weight: 800;
+  background: var(--grad-main);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.carousel-heading {
+  font-family: 'Sora', sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+.carousel-body { font-size: 10px; color: var(--text-mid); line-height: 1.6; }
+.carousel-accent-bar {
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px; height: 100%;
+  background: var(--grad-main);
+}
+.carousel-footer { margin-top: auto; display: flex; align-items: center; justify-content: space-between; }
+.carousel-logo-mini { font-size: 18px; }
+.carousel-dots { display: flex; gap: 4px; }
+.c-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gray-light); }
+.c-dot.active { background: var(--blue-primary); width: 16px; border-radius: 100px; }
+
+/* ═══════════════════════════════════════
+   SLIDE 10 — WORKSHOP FLYER
+═══════════════════════════════════════ */
+.s10 {
+  background: var(--white-bg);
+  padding: 56px 80px;
+  flex-direction: row;
+  gap: 48px;
+}
+.s10-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.s10-right {
+  width: 400px;
+  flex-shrink: 0;
+}
+
+.flyer-mockup {
+  width: 100%;
+  background: var(--navy);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.2);
+  position: relative;
+}
+.flyer-top {
+  padding: 28px 28px 20px;
+  background: linear-gradient(135deg, #0A1B5E 0%, #0066FF 100%);
+  position: relative;
+  overflow: hidden;
+}
+.flyer-top-bg {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 80% 20%, rgba(55,214,255,0.25) 0%, transparent 60%),
+              radial-gradient(ellipse 60% 80% at 20% 80%, rgba(139,92,255,0.2) 0%, transparent 60%);
+}
+.flyer-top-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.flyer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  position: relative; z-index: 1;
+}
+.flyer-logo-row { display: flex; align-items: center; gap: 8px; }
+.flyer-logo-icon { width: 30px; height: 30px; border-radius: 8px; background: rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; font-size: 14px; }
+.flyer-logo-name { font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 800; color: white; }
+.flyer-badge { background: #FFD700; color: #111; font-family: 'Sora', sans-serif; font-size: 10px; font-weight: 800; padding: 5px 12px; border-radius: 100px; }
+.flyer-title-main {
+  font-family: 'Sora', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: white;
+  line-height: 1.05;
+  letter-spacing: -1px;
+  position: relative; z-index: 1;
+  margin-bottom: 6px;
+}
+.flyer-title-accent { color: var(--cyan); }
+.flyer-subtitle { font-size: 11px; color: rgba(255,255,255,0.55); position: relative; z-index: 1; }
+
+.flyer-students {
+  background: rgba(255,255,255,0.08);
+  margin: -1px 0 0;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+  font-style: italic;
+  position: relative; z-index: 1;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.flyer-features {
+  padding: 20px 28px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.feat-item {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.feat-icon {
+  width: 28px; height: 28px;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.feat-text h6 { font-family: 'Sora', sans-serif; font-size: 10px; font-weight: 700; color: white; }
+.feat-text p { font-size: 9px; color: rgba(255,255,255,0.4); }
+
+.flyer-cta {
+  padding: 16px 28px 24px;
+  background: rgba(10,132,255,0.08);
+  border-top: 1px solid rgba(10,132,255,0.15);
+}
+.flyer-cta-btn {
+  width: 100%;
+  background: var(--grad-main);
+  border-radius: 12px;
+  padding: 14px;
+  text-align: center;
+  font-family: 'Sora', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 20px rgba(10,132,255,0.4);
+}
+.flyer-contact-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 10px;
+  color: rgba(255,255,255,0.4);
+}
+.flyer-social-icons { display: flex; gap: 8px; }
+.flyer-si { width: 22px; height: 22px; border-radius: 6px; background: rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; font-size: 11px; }
+
+/* Flyer spec notes */
+.flyer-spec {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.spec-item {
+  background: white;
+  border-radius: 12px;
+  padding: 16px 20px;
+  border: 1px solid var(--gray-light);
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+.spec-num {
+  width: 28px; height: 28px;
+  border-radius: 8px;
+  background: var(--grad-main);
+  color: white;
+  font-family: 'Sora', sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.spec-item h5 { font-family: 'Sora', sans-serif; font-size: 12px; font-weight: 700; color: var(--text-dark); margin-bottom: 3px; }
+.spec-item p { font-size: 11px; color: var(--text-muted); line-height: 1.5; }
+
+/* ═══════════════════════════════════════
+   SLIDE 11 — PHOTOGRAPHY DIRECTION
+═══════════════════════════════════════ */
+.s11 {
+  background: var(--navy);
+  padding: 56px 80px;
+}
+.s11-bg {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 40% 50% at 50% 100%, rgba(10,132,255,0.12) 0%, transparent 60%);
+}
+.photo-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 12px;
+  margin-top: 36px;
+  height: 380px;
+}
+.photo-cell {
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+}
+.photo-cell.span2 { grid-row: 1 / 3; }
+.photo-cell-bg {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.photo-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(10,27,94,0.9) 0%, transparent 60%);
+}
+.photo-caption {
+  position: relative; z-index: 1;
+  font-family: 'Sora', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: white;
+}
+.photo-caption span { display: block; font-size: 9px; color: rgba(255,255,255,0.5); font-weight: 400; margin-top: 2px; }
+.photo-mood-strip {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+.mood-tag {
+  padding: 8px 16px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 600;
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.65);
+  background: rgba(255,255,255,0.04);
+}
+.mood-tag.active { border-color: rgba(10,132,255,0.5); color: var(--cyan); background: rgba(10,132,255,0.1); }
+
+/* Illustration-style placeholder photos */
+.photo-illus { width: 100%; height: 100%; object-fit: cover; }
+.photo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 64px;
+}
+
+/* ═══════════════════════════════════════
+   SLIDE 12 — CONSISTENCY GUIDELINES
+═══════════════════════════════════════ */
+.s12 {
+  background: var(--white-bg);
+  padding: 56px 80px;
+}
+.rules-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 32px;
+}
+.rule-panel {
+  border-radius: 16px;
+  padding: 28px 28px;
+}
+.rule-panel.do-panel {
+  background: rgba(52,199,89,0.06);
+  border: 1.5px solid rgba(52,199,89,0.25);
+}
+.rule-panel.dont-panel {
+  background: rgba(255,59,48,0.05);
+  border: 1.5px solid rgba(255,59,48,0.2);
+}
+.rule-panel-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.rule-icon { font-size: 20px; }
+.rule-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+}
+.do-panel .rule-title { color: #34C759; }
+.dont-panel .rule-title { color: #FF3B30; }
+.rule-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.rule-list li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 13px;
+  color: var(--text-mid);
+  line-height: 1.5;
+}
+.rule-list li::before {
+  content: '';
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 1px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px;
+}
+.do-panel .rule-list li::before { background: rgba(52,199,89,0.15); content: '✓'; color: #34C759; font-weight: 900; width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
+.dont-panel .rule-list li::before { background: rgba(255,59,48,0.12); content: '✕'; color: #FF3B30; font-weight: 900; width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
+
+.checklist-section {
+  margin-top: 20px;
+  background: var(--navy);
+  border-radius: 16px;
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.checklist-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.checklist-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  flex: 1;
+}
+.check-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 100px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  font-size: 12px;
+  color: rgba(255,255,255,0.65);
+}
+.check-chip .ck { color: #34C759; font-size: 11px; font-weight: 900; }
+
+/* ═══════════════════════════════════════
+   SLIDE 13 — BACK COVER
+═══════════════════════════════════════ */
+.s13 {
+  background: var(--navy);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 400px;
+}
+.s13-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 80% at 50% 100%, rgba(10,132,255,0.25) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 60% at 50% -20%, rgba(139,92,255,0.2) 0%, transparent 60%);
+}
+.s13-content { position: relative; z-index: 2; }
+.s13-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 42px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff 0%, var(--cyan) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -1.5px;
+  margin-bottom: 16px;
+}
+.s13-sub { font-size: 15px; color: rgba(255,255,255,0.45); margin-bottom: 40px; }
+.s13-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.s13-info-item {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 13px; color: rgba(255,255,255,0.55);
+}
+.s13-info-icon { font-size: 16px; }
+.s13-divider { width: 1px; height: 20px; background: rgba(255,255,255,0.15); }
+.s13-version {
+  margin-top: 48px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* ── WRAPPER ── */
+.slides-wrapper {
+  padding: 120px 40px 80px;
+  max-width: 1360px;
+  margin: 0 auto;
+}
+.section-divider {
+  text-align: center;
+  margin: 24px 0 8px;
+  font-family: 'Sora', sans-serif;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.2);
+}
+
+/* Utility */
+.relative { position: relative; }
+.z1 { position: relative; z-index: 1; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav-bar">
+  <div class="nav-logo">AI Mentoring</div>
+  <div class="nav-label">Mini Brand Guideline 2025</div>
+  <div class="nav-toc">
+    <div class="nav-dot" title="Cover"></div>
+    <div class="nav-dot" title="Overview"></div>
+    <div class="nav-dot" title="Personality"></div>
+    <div class="nav-dot" title="Colors"></div>
+    <div class="nav-dot" title="Typography"></div>
+    <div class="nav-dot" title="Visual Style"></div>
+    <div class="nav-dot" title="Elements"></div>
+    <div class="nav-dot" title="Social Media"></div>
+    <div class="nav-dot" title="Mockups"></div>
+    <div class="nav-dot" title="Workshop"></div>
+    <div class="nav-dot" title="Photography"></div>
+    <div class="nav-dot" title="Guidelines"></div>
+  </div>
+</nav>
+
+<div class="slides-wrapper">
+
+<!-- ══════════════════════════════════ 
+     SLIDE 01 — COVER
+══════════════════════════════════ -->
+<div class="slide s01">
+  <div class="s01-bg"></div>
+  <div class="s01-grid"></div>
+  <div class="s01-orbit"></div>
+  <div class="s01-orbit2"></div>
+
+  <div class="s01-content">
+    <div class="s01-eyebrow">Brand Guideline Document</div>
+    <div>
+      <!-- Simplified AI logo in SVG -->
+      <img src="asset/Logo Aideal Biru bgrmv.png" alt="" width="100" height="100">
+    </div>
+    <div class="s01-title">AI Mentoring</div>
+    <div class="s01-sub">Mini Brand Guideline — Design System & Identity Standards</div>
+    <div class="s01-meta">
+      <span>Version 1.0</span>
+      <span class="dot"></span>
+      <span>May 2025</span>
+      <span class="dot"></span>
+      <span>@aimentoring.official</span>
+      <span class="dot"></span>
+      <span>Confidential</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════ 
+     SLIDE 02 — BRAND OVERVIEW & LOGO
+══════════════════════════════════ -->
+<div class="slide s02">
+  <span class="page-label" style="color:var(--text-muted)">01 / Brand Overview</span>
+
+  <!-- Left panel: logo showcase -->
+  <div class="s02-left">
+    <div class="s02-left-bg"></div>
+    <div class="logo-showcase">
+      <div class="section-tag tag-white z1">Logo Versions</div>
+
+      <div class="logo-item on-dark z1">
+        <img src="asset/Logo Aideal Biru bgrmv.png" alt="" width="60" height="60">
+        <div class="logo-text-info">
+          <h5 style="color:white">Primary — Blue</h5>
+          <p style="color:rgba(255,255,255,0.4)">On dark backgrounds</p>
+        </div>
+      </div>
+
+      <div class="logo-item on-white z1">
+        <img src="asset/Logo Aideal Biru bgrmv.png" alt="" width="60" height="60">
+        <div class="logo-text-info">
+          <h5 style="color:var(--text-dark)">Primary — Dark</h5>
+          <p>On light backgrounds</p>
+        </div>
+      </div>
+
+      <div class="logo-item on-dark z1" style="background:#000">
+        <img src="asset/Logo Aideal Putih bgrmv.png" alt="" width="62" height="62">
+        <div class="logo-text-info">
+          <h5 style="color:white">Mono — White</h5>
+          <p style="color:rgba(255,255,255,0.4)">Special use on black</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right panel: brand overview text -->
+  <div class="s02-right">
+    <span class="section-tag tag-blue">01 — Brand Overview</span>
+    <h2 class="slide-heading">Where <span class="accent">AI Intelligence</span><br>Meets Education</h2>
+    <p class="slide-body">AI Mentoring is an educational technology brand dedicated to bringing artificial intelligence literacy to schools, students, and teachers across Indonesia. The brand bridges the gap between advanced technology and everyday learning — making AI approachable, exciting, and empowering for the next generation.</p>
+
+    <div class="overview-cards">
+      <div class="ov-card">
+        <div class="ov-card-icon" style="background:rgba(10,132,255,0.1)">🎓</div>
+        <h4>Primary Audience</h4>
+        <p>High school students, teachers & educational institutions</p>
+      </div>
+      <div class="ov-card">
+        <div class="ov-card-icon" style="background:rgba(139,92,255,0.1)">🤖</div>
+        <h4>Core Mission</h4>
+        <p>Democratizing AI education for every school in Indonesia</p>
+      </div>
+      <div class="ov-card">
+        <div class="ov-card-icon" style="background:rgba(55,214,255,0.1)">⚡</div>
+        <h4>Visual Energy</h4>
+        <p>Futuristic & modern, yet warm, friendly and approachable</p>
+      </div>
+      <div class="ov-card">
+        <div class="ov-card-icon" style="background:rgba(18,61,255,0.1)">📱</div>
+        <h4>Channels</h4>
+        <p>Instagram, TikTok, school campaigns, workshops & flyers</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════ 
+     SLIDE 03 — BRAND PERSONALITY
+══════════════════════════════════ -->
+<div class="slide s03">
+  <div class="s03-bg"></div>
+  <div class="z1" style="width:100%">
+    <span class="section-tag tag-white">02 — Brand Personality</span>
+    <h2 class="slide-heading" style="color:white">The <span style="background:var(--grad-glow);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Character</span> of AI Mentoring</h2>
+
+    <div class="personality-grid">
+      <div class="pers-card c1">
+        <span class="pers-icon">🧠</span>
+        <div class="pers-top">Smart but Friendly</div>
+        <div class="pers-bottom">Intelligent content delivered with warmth and a relatable voice</div>
+      </div>
+      <div class="pers-card c2">
+        <span class="pers-icon">🚀</span>
+        <div class="pers-top">Advanced but Approachable</div>
+        <div class="pers-bottom">Cutting-edge AI made simple enough for any beginner to grasp</div>
+      </div>
+      <div class="pers-card c3">
+        <span class="pers-icon">⚡</span>
+        <div class="pers-top">Educational but Exciting</div>
+        <div class="pers-bottom">Learning that feels like an adventure, not a chore</div>
+      </div>
+      <div class="pers-card c4">
+        <span class="pers-icon">🌟</span>
+        <div class="pers-top">Youthful but Professional</div>
+        <div class="pers-bottom">Gen Z energy with institutional credibility for schools</div>
+      </div>
+      <div class="pers-card c5">
+        <span class="pers-icon">💡</span>
+        <div class="pers-top">Innovative but Simple</div>
+        <div class="pers-bottom">Future-forward ideas explained in clear, everyday language</div>
+      </div>
+    </div>
+
+    <div class="tone-section">
+      <div class="tone-label">Tone of Voice</div>
+      <div class="tone-chips">
+        <div class="chip chip-cyan">Motivational</div>
+        <div class="chip chip-blue">Modern</div>
+        <div class="chip chip-blue">Clear & Direct</div>
+        <div class="chip chip-purple">Engaging</div>
+        <div class="chip chip-purple">Empowering</div>
+        <div class="chip chip-cyan">Forward-thinking</div>
+        <div class="chip chip-blue">Inclusive</div>
+        <div class="chip chip-purple">Optimistic</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════ 
+     SLIDE 04 — COLOR PALETTE
+══════════════════════════════════ -->
+<div class="slide s04" style="min-height:760px">
+  <span class="page-label" style="color:var(--text-muted)">03 / Color Palette</span>
+  <span class="section-tag tag-blue">03 — Color System</span>
+  <h2 class="slide-heading">Brand <span class="accent">Color Palette</span></h2>
+
+  <div class="color-section">
+    <div class="color-section-title">Primary Colors</div>
+    <div class="primary-swatches">
+      <div class="swatch" style="background:#0A84FF">
+        <div class="swatch-name" style="color:white">Primary Blue</div>
+        <div class="swatch-hex" style="color:white">#0A84FF</div>
+      </div>
+      <div class="swatch" style="background:#0066FF">
+        <div class="swatch-name" style="color:white">Electric Blue</div>
+        <div class="swatch-hex" style="color:white">#0066FF</div>
+      </div>
+      <div class="swatch" style="background:#123DFF">
+        <div class="swatch-name" style="color:white">Deep Royal</div>
+        <div class="swatch-hex" style="color:white">#123DFF</div>
+      </div>
+      <div class="swatch" style="background:#0A1B5E">
+        <div class="swatch-name" style="color:white">Dark Navy</div>
+        <div class="swatch-hex" style="color:white">#0A1B5E</div>
+      </div>
+    </div>
+
+    <div class="color-section-title">Secondary & Accent Colors</div>
+    <div class="secondary-row">
+      <div class="sec-swatch" style="background:#8B5CFF">
+        <div class="swatch-name" style="color:white;font-family:'Sora',sans-serif;font-size:11px;font-weight:700">Purple</div>
+        <div class="swatch-hex" style="color:rgba(255,255,255,0.7);font-size:10px;font-family:monospace">#8B5CFF</div>
+      </div>
+      <div class="sec-swatch" style="background:#A66CFF">
+        <div class="swatch-name" style="color:white;font-family:'Sora',sans-serif;font-size:11px;font-weight:700">Soft Purple</div>
+        <div class="swatch-hex" style="color:rgba(255,255,255,0.7);font-size:10px;font-family:monospace">#A66CFF</div>
+      </div>
+      <div class="sec-swatch" style="background:#37D6FF">
+        <div class="swatch-name" style="color:#0A1B5E;font-family:'Sora',sans-serif;font-size:11px;font-weight:700">Cyan</div>
+        <div class="swatch-hex" style="color:rgba(10,27,94,0.6);font-size:10px;font-family:monospace">#37D6FF</div>
+      </div>
+      <div class="sec-swatch" style="background:#F8FAFF; border:1.5px solid #EDEFF5">
+        <div class="swatch-name" style="color:#101828;font-family:'Sora',sans-serif;font-size:11px;font-weight:700">BG White</div>
+        <div class="swatch-hex" style="color:rgba(16,24,40,0.45);font-size:10px;font-family:monospace">#F8FAFF</div>
+      </div>
+      <div class="sec-swatch" style="background:#EDEFF5; border:1.5px solid #D0D5DD">
+        <div class="swatch-name" style="color:#101828;font-family:'Sora',sans-serif;font-size:11px;font-weight:700">Light Gray</div>
+        <div class="swatch-hex" style="color:rgba(16,24,40,0.45);font-size:10px;font-family:monospace">#EDEFF5</div>
+      </div>
+      <div class="sec-swatch" style="background:#101828">
+        <div class="swatch-name" style="color:white;font-family:'Sora',sans-serif;font-size:11px;font-weight:700">Dark Text</div>
+        <div class="swatch-hex" style="color:rgba(255,255,255,0.5);font-size:10px;font-family:monospace">#101828</div>
+      </div>
+    </div>
+
+    <div class="color-section-title">Brand Gradients</div>
+    <div class="gradients-row">
+      <div class="grad-card" style="background:linear-gradient(135deg,#0A84FF,#8B5CFF)">
+        <div>
+          <div class="grad-card-label">Main Gradient</div>
+          <div class="grad-card-desc">#0A84FF → #8B5CFF · Primary use</div>
+        </div>
+      </div>
+      <div class="grad-card" style="background:linear-gradient(135deg,#0066FF,#37D6FF)">
+        <div>
+          <div class="grad-card-label">Cyan Gradient</div>
+          <div class="grad-card-desc">#0066FF → #37D6FF · Highlights</div>
+        </div>
+      </div>
+      <div class="grad-card" style="background:linear-gradient(135deg,#0A1B5E,#0066FF)">
+        <div>
+          <div class="grad-card-label">Deep Navy</div>
+          <div class="grad-card-desc">#0A1B5E → #0066FF · Backgrounds</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════ 
+     SLIDE 05 — TYPOGRAPHY
+══════════════════════════════════ -->
+<div class="slide s05">
+  <div class="s05-bg"></div>
+  <div class="z1" style="width:100%">
+    <span class="section-tag tag-cyan">04 — Typography</span>
+    <h2 class="slide-heading" style="color:white">Type <span style="background:var(--grad-cyan);-webkit-background-clip:text;-webkit-text-fill-color:transparent">System</span></h2>
+
+    <div class="typo-grid">
+      <div class="typo-panel">
+        <div class="typo-role">Display / Heading Font</div>
+        <div class="heading-demo" style="font-size:40px">Sora<br>ExtraBold</div>
+        <p style="font-family:'Sora',sans-serif;font-size:13px;color:rgba(255,255,255,0.4);margin-bottom:20px;letter-spacing:0.5px">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz 0123456789</p>
+        <table class="scale-table">
+          <tr><td>H1 Display</td><td class="scale-example" style="font-size:28px">64px / 800</td><td style="color:rgba(255,255,255,0.35)">Hero titles</td></tr>
+          <tr><td>H2 Title</td><td class="scale-example" style="font-size:22px">40px / 800</td><td style="color:rgba(255,255,255,0.35)">Section heads</td></tr>
+          <tr><td>H3 Section</td><td class="scale-example" style="font-size:17px">28px / 700</td><td style="color:rgba(255,255,255,0.35)">Card titles</td></tr>
+          <tr><td>H4 Sub</td><td class="scale-example" style="font-size:14px">18px / 700</td><td style="color:rgba(255,255,255,0.35)">Labels</td></tr>
+        </table>
+      </div>
+
+      <div class="typo-panel">
+        <div class="typo-role">Body / Content Font</div>
+        <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:32px;font-weight:700;color:white;margin-bottom:6px">Plus Jakarta</div>
+        <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;color:rgba(255,255,255,0.45);margin-bottom:20px;letter-spacing:0.5px">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz 0123456789</div>
+        <div class="body-demo">AI Mentoring hadir untuk membantu siswa dan guru memahami kecerdasan buatan dengan cara yang mudah dan menyenangkan. Belajar AI bukan pilihan — ini keharusan masa depan.</div>
+        <table class="scale-table">
+          <tr><td>Body L</td><td class="scale-example" style="font-size:14px;font-weight:500;font-family:'Plus Jakarta Sans',sans-serif;color:white">16px / 500</td><td style="color:rgba(255,255,255,0.35)">Main body</td></tr>
+          <tr><td>Body M</td><td class="scale-example" style="font-size:12px;font-weight:400;font-family:'Plus Jakarta Sans',sans-serif;color:white">14px / 400</td><td style="color:rgba(255,255,255,0.35)">Captions</td></tr>
+          <tr><td>Caption</td><td class="scale-example" style="font-size:11px;font-weight:400;font-family:'Plus Jakarta Sans',sans-serif;color:white">12px / 400</td><td style="color:rgba(255,255,255,0.35)">Labels, tags</td></tr>
+          <tr><td>Overline</td><td class="scale-example" style="font-size:10px;font-weight:700;font-family:'Sora',sans-serif;letter-spacing:2px;color:rgba(255,255,255,0.7)">10px / 700 LS+2</td><td style="color:rgba(255,255,255,0.35)">Categories</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════ 
+     SLIDE 06 — VISUAL STYLE
+══════════════════════════════════ -->
+<div class="slide s06" style="min-height:720px">
+  <span class="page-label" style="color:var(--text-muted)">05 / Visual Style</span>
+  <span class="section-tag tag-blue">05 — Visual Style</span>
+  <h2 class="slide-heading">Design <span class="accent">Language</span></h2>
+
+  <div class="style-principles">
+    <div class="style-card">
+      <div class="icon-box" style="background:rgba(10,132,255,0.1)">✨</div>
+      <h4>Glassmorphism</h4>
+      <p>Frosted glass cards with subtle borders and backdrop blur effects for depth</p>
+    </div>
+    <div class="style-card">
+      <div class="icon-box" style="background:rgba(139,92,255,0.1)">🌊</div>
+      <h4>Fluid Gradients</h4>
+      <p>Dynamic blue-to-purple gradients as primary visual energy carrier</p>
+    </div>
+    <div class="style-card">
+      <div class="icon-box" style="background:rgba(55,214,255,0.1)">💎</div>
+      <h4>Rounded Cards</h4>
+      <p>16–20px border-radius for a friendly, modern, approachable feel</p>
+    </div>
+    <div class="style-card">
+      <div class="icon-box" style="background:rgba(18,61,255,0.1)">⚡</div>
+      <h4>Glow Effects</h4>
+      <p>Subtle neon glow on CTA buttons and key interactive elements only</p>
+    </div>
+  </div>
+
+  <!-- Glassmorphism demo -->
+  <div class="glass-demo">
+    <div class="glass-demo-bg"></div>
+    <div class="glass-card">
+      <h5>Workshop AI Unlimited</h5>
+      <p>100% Gratis untuk sekolahmu</p>
+      <div class="glow-pill glow-blue">Daftar Sekarang →</div>
+    </div>
+    <div class="glass-card">
+      <h5>Belajar AI hari ini</h5>
+      <p>ChatGPT · Gemini · Claude dan lebih banyak lagi</p>
+      <div class="glow-pill glow-purple">Mulai Belajar →</div>
+    </div>
+    <div class="glass-card">
+      <h5>5 Tanda Lo Harus Mulai</h5>
+      <p>Adaptasi belajar AI sekarang juga</p>
+      <div class="glow-pill glow-blue">Baca Selengkapnya →</div>
+    </div>
+  </div>
+
+  <div style="margin-top:16px;display:flex;gap:12px;align-items:center">
+    <div style="font-size:11px;color:var(--text-muted);font-family:'Sora',sans-serif;font-weight:600;letter-spacing:1px;text-transform:uppercase">Shadow tokens:</div>
+    <div style="background:white;border-radius:10px;padding:8px 16px;box-shadow:0 2px 8px rgba(0,0,0,0.06);font-size:11px;color:var(--text-mid)">Soft: 0 2px 8px rgba(0,0,0,0.06)</div>
+    <div style="background:white;border-radius:10px;padding:8px 16px;box-shadow:0 8px 24px rgba(0,0,0,0.1);font-size:11px;color:var(--text-mid)">Medium: 0 8px 24px rgba(0,0,0,0.10)</div>
+    <div style="background:white;border-radius:10px;padding:8px 16px;box-shadow:0 20px 60px rgba(10,132,255,0.25);font-size:11px;color:var(--text-mid)">Glow Blue</div>
+    <div style="background:white;border-radius:10px;padding:8px 16px;box-shadow:0 20px 60px rgba(139,92,255,0.25);font-size:11px;color:var(--text-mid)">Glow Purple</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════ 
+     SLIDE 07 — GRAPHIC ELEMENTS
+══════════════════════════════════ -->
+<div class="slide s07">
+  <div class="s07-bg"></div>
+  <div class="z1" style="width:100%">
+    <span class="section-tag tag-cyan">06 — Graphic Elements</span>
+    <h2 class="slide-heading" style="color:white">Brand <span style="background:var(--grad-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Icon Library</span></h2>
+
+    <div class="elements-grid">
+      <div class="el-item"><span class="el-icon">🤖</span><div class="el-label">AI Robot</div></div>
+      <div class="el-item"><span class="el-icon">🧬</span><div class="el-label">Neural Net</div></div>
+      <div class="el-item"><span class="el-icon">💬</span><div class="el-label">Chat Bubble</div></div>
+      <div class="el-item"><span class="el-icon">⚙️</span><div class="el-label">AI Chip</div></div>
+      <div class="el-item"><span class="el-icon">📊</span><div class="el-label">Data Chart</div></div>
+      <div class="el-item"><span class="el-icon">🔮</span><div class="el-label">AI Crystal</div></div>
+      <div class="el-item"><span class="el-icon">💡</span><div class="el-label">Idea Bulb</div></div>
+      <div class="el-item"><span class="el-icon">🎓</span><div class="el-label">Graduation</div></div>
+      <div class="el-item"><span class="el-icon">📱</span><div class="el-label">Mobile</div></div>
+      <div class="el-item"><span class="el-icon">🌐</span><div class="el-label">Network</div></div>
+      <div class="el-item"><span class="el-icon">⚡</span><div class="el-label">Spark</div></div>
+      <div class="el-item"><span class="el-icon">🔗</span><div class="el-label">Connection</div></div>
+    </div>
+
+    <div class="neural-demo">
+      <!-- Inline SVG neural network pattern -->
+      <svg width="280" height="120" viewBox="0 0 280 120" fill="none" style="flex-shrink:0">
+        <!-- Layer 1 nodes -->
+        <circle cx="30" cy="30" r="8" fill="rgba(10,132,255,0.5)" stroke="#0A84FF" stroke-width="1.5"/>
+        <circle cx="30" cy="60" r="8" fill="rgba(10,132,255,0.5)" stroke="#0A84FF" stroke-width="1.5"/>
+        <circle cx="30" cy="90" r="8" fill="rgba(10,132,255,0.5)" stroke="#0A84FF" stroke-width="1.5"/>
+        <!-- Layer 2 nodes -->
+        <circle cx="100" cy="20" r="8" fill="rgba(139,92,255,0.5)" stroke="#8B5CFF" stroke-width="1.5"/>
+        <circle cx="100" cy="50" r="8" fill="rgba(139,92,255,0.5)" stroke="#8B5CFF" stroke-width="1.5"/>
+        <circle cx="100" cy="80" r="8" fill="rgba(139,92,255,0.5)" stroke="#8B5CFF" stroke-width="1.5"/>
+        <circle cx="100" cy="100" r="8" fill="rgba(139,92,255,0.5)" stroke="#8B5CFF" stroke-width="1.5"/>
+        <!-- Layer 3 nodes -->
+        <circle cx="180" cy="35" r="8" fill="rgba(55,214,255,0.5)" stroke="#37D6FF" stroke-width="1.5"/>
+        <circle cx="180" cy="65" r="8" fill="rgba(55,214,255,0.5)" stroke="#37D6FF" stroke-width="1.5"/>
+        <circle cx="180" cy="95" r="8" fill="rgba(55,214,255,0.5)" stroke="#37D6FF" stroke-width="1.5"/>
+        <!-- Output -->
+        <circle cx="250" cy="60" r="10" fill="rgba(10,132,255,0.8)" stroke="#0A84FF" stroke-width="2"/>
+        <!-- Connections L1→L2 -->
+        <line x1="38" y1="30" x2="92" y2="20" stroke="rgba(10,132,255,0.25)" stroke-width="1"/>
+        <line x1="38" y1="30" x2="92" y2="50" stroke="rgba(10,132,255,0.25)" stroke-width="1"/>
+        <line x1="38" y1="60" x2="92" y2="50" stroke="rgba(10,132,255,0.35)" stroke-width="1.5"/>
+        <line x1="38" y1="60" x2="92" y2="80" stroke="rgba(10,132,255,0.25)" stroke-width="1"/>
+        <line x1="38" y1="90" x2="92" y2="80" stroke="rgba(10,132,255,0.25)" stroke-width="1"/>
+        <line x1="38" y1="90" x2="92" y2="100" stroke="rgba(10,132,255,0.25)" stroke-width="1"/>
+        <!-- Connections L2→L3 -->
+        <line x1="108" y1="20" x2="172" y2="35" stroke="rgba(139,92,255,0.25)" stroke-width="1"/>
+        <line x1="108" y1="50" x2="172" y2="35" stroke="rgba(139,92,255,0.35)" stroke-width="1.5"/>
+        <line x1="108" y1="50" x2="172" y2="65" stroke="rgba(139,92,255,0.25)" stroke-width="1"/>
+        <line x1="108" y1="80" x2="172" y2="65" stroke="rgba(139,92,255,0.25)" stroke-width="1"/>
+        <line x1="108" y1="80" x2="172" y2="95" stroke="rgba(139,92,255,0.35)" stroke-width="1.5"/>
+        <!-- L3→Output -->
+        <line x1="188" y1="35" x2="240" y2="60" stroke="rgba(55,214,255,0.3)" stroke-width="1"/>
+        <line x1="188" y1="65" x2="240" y2="60" stroke="rgba(55,214,255,0.5)" stroke-width="2"/>
+        <line x1="188" y1="95" x2="240" y2="60" stroke="rgba(55,214,255,0.3)" stroke-width="1"/>
+        <text x="17" y="115" fill="rgba(255,255,255,0.3)" font-size="9" font-family="monospace">Input</text>
+        <text x="87" y="115" fill="rgba(255,255,255,0.3)" font-size="9" font-family="monospace">Hidden</text>
+        <text x="165" y="115" fill="rgba(255,255,255,0.3)" font-size="9" font-family="monospace">Output</text>
+      </svg>
+
+      <div class="neural-desc">
+        <h4>Neural Network Visual Pattern</h4>
+        <p>Use neural network line art as a subtle background element or as an illustrative feature. Keep it light — 15–25% opacity on dark backgrounds, never as the dominant visual.</p>
+        <div class="do-dont">
+          <span class="do-tag">✓ Subtle accent</span>
+          <span class="do-tag">✓ Low opacity BG</span>
+          <span class="dont-tag">✕ Cluttered foreground</span>
+          <span class="dont-tag">✕ Full-color dominant</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════ 
+     SLIDE 08 — SOCIAL MEDIA SYSTEM
+══════════════════════════════════ -->
+<div class="slide s08" style="min-height:780px">
+  <span class="page-label" style="color:var(--text-muted)">07 / Social Media</span>
+  <span class="section-tag tag-purple">07 — Social Media System</span>
+  <h2 class="slide-heading">Content <span class="accent">Format Guide</span></h2>
+
+  <div class="social-formats">
+    <!-- Feed 4:5 -->
+    <div class="format-card">
+      <div class="format-preview" style="background:var(--grad-main)">
+        <div style="position:relative;z-index:1;text-align:center">
+          <div style="font-size:28px;font-weight:900;color:white;font-family:'Sora',sans-serif;line-height:1">4:5</div>
+          <div style="font-size:9px;color:rgba(255,255,255,0.6);margin-top:4px">1080 × 1350px</div>
+        </div>
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 80% 20%,rgba(55,214,255,0.3),transparent 50%)"></div>
+      </div>
+      <div class="format-info">
+        <h5>Instagram Feed</h5>
+        <p>Main content · Bold headline + visual focal point</p>
+      </div>
+    </div>
+
+    <!-- Story 9:16 -->
+    <div class="format-card">
+      <div class="format-preview" style="background:linear-gradient(160deg,#0066FF,#8B5CFF)">
+        <div style="position:relative;z-index:1;text-align:center">
+          <div style="font-size:28px;font-weight:900;color:white;font-family:'Sora',sans-serif;line-height:1">9:16</div>
+          <div style="font-size:9px;color:rgba(255,255,255,0.6);margin-top:4px">1080 × 1920px</div>
+        </div>
+      </div>
+      <div class="format-info">
+        <h5>Instagram Story</h5>
+        <p>Full-bleed · Strong CTA at bottom</p>
+      </div>
+    </div>
+
+    <!-- Carousel 1:1 -->
+    <div class="format-card">
+      <div class="format-preview" style="background:var(--white-bg);border-bottom:1px solid var(--gray-light)">
+        <div style="position:relative;z-index:1;text-align:center">
+          <div style="font-size:28px;font-weight:900;color:var(--blue-primary);font-family:'Sora',sans-serif;line-height:1">1:1</div>
+          <div style="font-size:9px;color:var(--text-muted);margin-top:4px">1080 × 1080px</div>
+        </div>
+      </div>
+      <div class="format-info">
+        <h5>Carousel Post</h5>
+        <p>Multi-slide · Numbered content cards</p>
+      </div>
+    </div>
+
+    <!-- Reels Cover -->
+    <div class="format-card">
+      <div class="format-preview" style="background:linear-gradient(135deg,#0A1B5E,#123DFF)">
+        <div style="position:relative;z-index:1;text-align:center">
+          <div style="font-size:26px;font-weight:900;color:var(--cyan);font-family:'Sora',sans-serif;line-height:1">Reels</div>
+          <div style="font-size:9px;color:rgba(255,255,255,0.5);margin-top:4px">1080 × 1920px</div>
+        </div>
+      </div>
+      <div class="format-info">
+        <h5>Reels Cover</h5>
+        <p>Hook text · Thumbnail-optimised</p>
+      </div>
+    </div>
+
+    <!-- Landscape Banner -->
+    <div class="format-card">
+      <div class="format-preview" style="background:linear-gradient(90deg,#0A1B5E,#8B5CFF)">
+        <div style="position:relative;z-index:1;text-align:center">
+          <div style="font-size:22px;font-weight:900;color:white;font-family:'Sora',sans-serif;line-height:1">16:9</div>
+          <div style="font-size:9px;color:rgba(255,255,255,0.5);margin-top:4px">1920 × 1080px</div>
+        </div>
+      </div>
+      <div class="format-info">
+        <h5>Workshop Banner</h5>
+        <p>Presentation & zoom backgrounds</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer system -->
+  <div style="margin-top:4px">
+    <div class="color-section-title" style="color:var(--text-muted)">Consistent Post Footer</div>
+    <div class="footer-demo">
+      <div class="footer-demo-bg"></div>
+      <div class="footer-brand">
+        <div class="footer-brand-icon">🤖</div>
+        <div>
+          <div class="footer-brand-name">AI Mentoring</div>
+          <div class="footer-brand-handle">@aimentoring.official</div>
+        </div>
+      </div>
+      <div class="footer-socials">
+        <div class="footer-social-item"><div class="s-icon">📷</div><span>aimentoring.official</span></div>
+        <div class="footer-social-item"><div class="s-icon">♪</div><span>aimentoring.official</span></div>
+        <div class="footer-social-item"><div class="s-icon">🌐</div><span>sekolah.aimentoring.id</span></div>
+      </div>
+      <div class="footer-contact">
+        <p class="contact-main">0858-9926-9992</p>
+        <p>digitalmentoring.id@gmail.com</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════ 
+     SLIDE 09 — SOCIAL LAYOUT MOCKUPS
+══════════════════════════════════ -->
+<div class="slide s09">
+  <div class="s09-bg"></div>
+  <div class="z1" style="width:100%">
+    <span class="section-tag tag-white">08 — Post Layout Examples</span>
+    <h2 class="slide-heading" style="color:white">Social Media <span style="background:var(--grad-cyan);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Mockups</span></h2>
+
+    <div class="mockup-row">
+      <!-- Feed mockup -->
+      <div class="mockup-phone-wrap">
+        <div class="mockup-label">Instagram Feed 4:5</div>
+        <div class="phone-frame">
+          <div class="phone-notch"><div class="notch-pill"></div></div>
+          <div class="feed-post">
+            <div class="feed-post-header">
+              <div class="feed-avatar"></div>
+              <div>
+                <div class="feed-user">aimentoring.official</div>
+                <div style="font-size:9px;color:#888">AI Mentoring · Sponsored</div>
+              </div>
+            </div>
+            <div class="feed-main">
+              <div class="feed-main-bg"></div>
+              <div class="feed-logo-mini">🤖</div>
+              <div class="feed-headline">AI bukan<br>masa depan—<br>ini hari ini.</div>
+              <div class="feed-sub">Pelajari AI bersama kami ↗</div>
+              <div class="feed-footer-strip">
+                <span>📷 aimentoring.official</span>
+                <span>🌐 sekolah.aimentoring.id</span>
+              </div>
+            </div>
+            <div class="feed-actions">❤️ 💬 ↗</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Story mockup -->
+      <div class="mockup-phone-wrap">
+        <div class="mockup-label">Instagram Story 9:16</div>
+        <div class="phone-frame" style="width:200px">
+          <div class="phone-notch"><div class="notch-pill"></div></div>
+          <div class="story-post">
+            <div class="story-bg"></div>
+            <div class="story-bg2"></div>
+            <div class="story-top">
+              <div class="story-progress-bars">
+                <div class="story-bar active"></div>
+                <div class="story-bar"></div>
+                <div class="story-bar"></div>
+              </div>
+              <div class="story-avatar-row">
+                <div class="story-av"></div>
+                <div>
+                  <div class="story-name">aimentoring.official</div>
+                  <div class="story-time">Baru saja</div>
+                </div>
+              </div>
+            </div>
+            <div class="story-content">
+              <div style="font-size:36px">🤖</div>
+              <div class="story-big">Workshop<br>AI Gratis!</div>
+              <div class="story-desc">Untuk sekolahmu — tanpa biaya, tanpa batas</div>
+              <div style="background:rgba(55,214,255,0.2);border:1px solid rgba(55,214,255,0.4);border-radius:100px;padding:6px 16px;font-size:11px;color:var(--cyan);font-family:'Sora',sans-serif;font-weight:700">100% GRATIS ✨</div>
+            </div>
+            <div class="story-cta">Daftarkan Sekolahmu →</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carousel mockup -->
+      <div class="mockup-phone-wrap">
+        <div class="mockup-label">Carousel Slide</div>
+        <div class="phone-frame">
+          <div class="phone-notch"><div class="notch-pill"></div></div>
+          <div class="feed-post">
+            <div class="feed-post-header">
+              <div class="feed-avatar"></div>
+              <div>
+                <div class="feed-user">aimentoring.official</div>
+                <div style="font-size:9px;color:#888">28 April</div>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div class="carousel-accent-bar"></div>
+              <div class="carousel-num">01</div>
+              <div class="carousel-heading">Dunia bergerak<br>makin cepat</div>
+              <div class="carousel-body">AI bikin banyak pekerjaan selesai lebih cepat. Kalau lo nggak paham cara pakainya, lo akan kalah cepat dari orang lain.</div>
+              <div class="carousel-footer">
+                <div class="carousel-logo-mini">🤖</div>
+                <div class="carousel-dots">
+                  <div class="c-dot active"></div>
+                  <div class="c-dot"></div>
+                  <div class="c-dot"></div>
+                  <div class="c-dot"></div>
+                  <div class="c-dot"></div>
+                </div>
+              </div>
+            </div>
+            <div class="feed-actions">❤️ 💬 ↗ 🔖</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════ 
+     SLIDE 10 — WORKSHOP FLYER
+══════════════════════════════════ -->
+<div class="slide s10">
+  <span class="page-label" style="color:var(--text-muted)">09 / Workshop Flyer</span>
+
+  <div class="s10-left">
+    <span class="section-tag tag-blue">09 — Workshop Flyer Direction</span>
+    <h2 class="slide-heading">Flyer <span class="accent">Layout System</span></h2>
+    <p class="slide-body">Workshop flyers follow a three-zone layout: a bold hero gradient header with AI visual, a feature grid section for benefits, and a strong CTA footer with contact details and QR code.</p>
+
+    <div class="flyer-spec" style="margin-top:28px">
+      <div class="spec-item">
+        <div class="spec-num">1</div>
+        <div>
+          <h5>Hero Zone</h5>
+          <p>Deep navy–electric blue gradient background. Event name in large Sora ExtraBold. Badge for "100% GRATIS" in high-contrast yellow. AI illustration or student photo as visual anchor.</p>
+        </div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-num">2</div>
+        <div>
+          <h5>Feature Grid</h5>
+          <p>2×2 or 2×3 rounded cards on light background. Icon (colored) + heading + brief description. Alternating blue/purple icon accent colors.</p>
+        </div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-num">3</div>
+        <div>
+          <h5>CTA Footer</h5>
+          <p>Blue gradient strip with main CTA button. Contact row: WhatsApp, website, email. Social icons (Instagram, TikTok, YouTube) + QR code for registration.</p>
+        </div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-num">4</div>
+        <div>
+          <h5>Typography Rules</h5>
+          <p>Event name: Sora 800, 48–64pt. Subtitle: Plus Jakarta 400, 14–16pt. Feature heads: Sora 700, 13–14pt. CTA button: Sora 800, 14pt uppercase.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="s10-right">
+    <!-- Flyer mockup -->
+    <div class="flyer-mockup">
+      <div class="flyer-top">
+        <div class="flyer-top-bg"></div>
+        <div class="flyer-top-grid"></div>
+        <div class="flyer-header">
+          <div class="flyer-logo-row">
+            <div class="flyer-logo-icon">🤖</div>
+            <div class="flyer-logo-name">AI Mentoring</div>
+          </div>
+          <div class="flyer-badge">100% GRATIS</div>
+        </div>
+        <div class="flyer-title-main">WORKSHOP<br><span class="flyer-title-accent">AI UNLIMITED</span></div>
+        <div class="flyer-subtitle" style="position:relative;z-index:1;margin-top:6px">Untuk Sekolahmu — Tanpa Batas, Tanpa Biaya</div>
+      </div>
+      <div class="flyer-students">
+        👨‍🎓 👩‍🎓 👨‍🏫 · Photo of students with laptops
+      </div>
+      <div class="flyer-features">
+        <div class="feat-item">
+          <div class="feat-icon" style="background:rgba(10,132,255,0.15)">🤖</div>
+          <div class="feat-text"><h6>Workshop AI Interaktif</h6><p>ChatGPT, Gemini, Claude</p></div>
+        </div>
+        <div class="feat-item">
+          <div class="feat-icon" style="background:rgba(139,92,255,0.15)">📚</div>
+          <div class="feat-text"><h6>Materi Sesuai Kurikulum</h6><p>Disesuaikan dengan sekolah</p></div>
+        </div>
+        <div class="feat-item">
+          <div class="feat-icon" style="background:rgba(55,214,255,0.15)">👨‍💼</div>
+          <div class="feat-text"><h6>Mentor Expert</h6><p>Praktisi AI berpengalaman</p></div>
+        </div>
+        <div class="feat-item">
+          <div class="feat-icon" style="background:rgba(255,165,0,0.15)">🏅</div>
+          <div class="feat-text"><h6>Sertifikat Resmi</h6><p>E-sertifikat peserta</p></div>
+        </div>
+      </div>
+      <div class="flyer-cta">
+        <div class="flyer-cta-btn">Daftarkan Sekolahmu SEKARANG! →</div>
+        <div class="flyer-contact-row">
+          <span>0858-9926-9992</span>
+          <div class="flyer-social-icons">
+            <div class="flyer-si">📷</div>
+            <div class="flyer-si">♪</div>
+            <div class="flyer-si">▶</div>
+          </div>
+          <span>sekolah.aimentoring.id</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════ 
+     SLIDE 11 — PHOTOGRAPHY DIRECTION
+══════════════════════════════════ -->
+<div class="slide s11">
+  <div class="s11-bg"></div>
+  <div class="z1" style="width:100%">
+    <span class="section-tag tag-cyan">10 — Photography Direction</span>
+    <h2 class="slide-heading" style="color:white">Imagery <span style="background:var(--grad-cyan);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Guidelines</span></h2>
+
+    <div class="photo-grid">
+      <div class="photo-cell span2" style="background:linear-gradient(135deg,#0A1B5E 0%,#0066FF 100%)">
+        <div class="photo-overlay"></div>
+        <div class="photo-placeholder" style="position:absolute;inset:0;opacity:0.12;font-size:100px">👨‍💻</div>
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px">
+          <div style="font-size:60px">👩‍🎓</div>
+          <div style="font-family:'Sora',sans-serif;font-size:13px;font-weight:700;color:rgba(255,255,255,0.6);text-align:center">Students + Technology<br>Natural Interaction</div>
+        </div>
+        <div style="position:relative;z-index:2">
+          <div class="photo-caption">Primary Subject<span>Students actively learning with devices</span></div>
+        </div>
+      </div>
+      <div class="photo-cell" style="background:linear-gradient(135deg,#123DFF,#8B5CFF)">
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:40px">👨‍🏫</div>
+        <div class="photo-overlay"></div>
+        <div class="photo-caption">Teachers + AI<span>Modern classroom</span></div>
+      </div>
+      <div class="photo-cell" style="background:linear-gradient(135deg,#0066FF,#37D6FF)">
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:40px">🤝</div>
+        <div class="photo-overlay"></div>
+        <div class="photo-caption">Collaboration<span>Group learning</span></div>
+      </div>
+      <div class="photo-cell" style="background:linear-gradient(135deg,#8B5CFF,#0A84FF)">
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:40px">💻</div>
+        <div class="photo-overlay"></div>
+        <div class="photo-caption">Device Focused<span>Laptop / tablet</span></div>
+      </div>
+      <div class="photo-cell" style="background:linear-gradient(135deg,#0A1B5E,#123DFF)">
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:40px">🏫</div>
+        <div class="photo-overlay"></div>
+        <div class="photo-caption">School Context<span>Real campus atmosphere</span></div>
+      </div>
+    </div>
+
+    <div class="photo-mood-strip">
+      <div class="mood-tag active">✓ Bright & Optimistic</div>
+      <div class="mood-tag active">✓ Blue-Purple Toned</div>
+      <div class="mood-tag active">✓ Smiling Students</div>
+      <div class="mood-tag active">✓ Natural Poses</div>
+      <div class="mood-tag active">✓ Modern Setting</div>
+      <div class="mood-tag" style="border-color:rgba(255,59,48,0.4);color:#FF6B6B">✕ Dark rooms</div>
+      <div class="mood-tag" style="border-color:rgba(255,59,48,0.4);color:#FF6B6B">✕ Robot-only imagery</div>
+      <div class="mood-tag" style="border-color:rgba(255,59,48,0.4);color:#FF6B6B">✕ Fake stock poses</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════ 
+     SLIDE 12 — CONSISTENCY GUIDELINES
+══════════════════════════════════ -->
+<div class="slide s12" style="min-height:720px">
+  <span class="page-label" style="color:var(--text-muted)">11 / Guidelines</span>
+  <span class="section-tag tag-blue">11 — Consistency Rules</span>
+  <h2 class="slide-heading">Brand <span class="accent">Do's & Don'ts</span></h2>
+
+  <div class="rules-grid">
+    <div class="rule-panel do-panel">
+      <div class="rule-panel-header">
+        <div class="rule-icon">✅</div>
+        <div class="rule-title">Always Do</div>
+      </div>
+      <ul class="rule-list">
+        <li>Use the approved blue-to-purple gradient as the primary energy carrier in all hero sections</li>
+        <li>Keep Sora ExtraBold/800 for all major headlines; maintain hierarchy consistency across formats</li>
+        <li>Add the social footer (Instagram, TikTok, website, phone) on every promotional post and flyer</li>
+        <li>Use rounded corners (16–20px) on all cards, buttons, and UI elements for brand consistency</li>
+        <li>Apply subtle glassmorphism effects on dark backgrounds for depth and modernity</li>
+        <li>Leave generous white space — clean, uncluttered layouts communicate trust and professionalism</li>
+        <li>Use real student/teacher photos with natural, authentic smiles and interactions</li>
+      </ul>
+    </div>
+    <div class="rule-panel dont-panel">
+      <div class="rule-panel-header">
+        <div class="rule-icon">🚫</div>
+        <div class="rule-title">Never Do</div>
+      </div>
+      <ul class="rule-list">
+        <li>Use dark, aggressive cyberpunk or hacker aesthetics — this conflicts with the educational warmth</li>
+        <li>Mix more than 3 primary colors in a single composition; keep it blue-dominant with purple accents</li>
+        <li>Stretch, crop, or alter the circular AI Mentoring logo proportions in any way</li>
+        <li>Use more than 2 typeface families in a single design — Sora + Plus Jakarta Sans only</li>
+        <li>Apply text on busy photo backgrounds without a gradient overlay for readability</li>
+        <li>Use red, orange or green as accent colors — these fall outside the brand palette entirely</li>
+        <li>Overcrowd compositions with too many graphic elements, effects, or decorative assets</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="checklist-section">
+    <div class="checklist-title">Pre-publish Checklist</div>
+    <div class="checklist-items">
+      <div class="check-chip"><span class="ck">✓</span> Brand colors used</div>
+      <div class="check-chip"><span class="ck">✓</span> Correct typeface</div>
+      <div class="check-chip"><span class="ck">✓</span> Logo present</div>
+      <div class="check-chip"><span class="ck">✓</span> Footer included</div>
+      <div class="check-chip"><span class="ck">✓</span> CTA visible</div>
+      <div class="check-chip"><span class="ck">✓</span> Rounded corners</div>
+      <div class="check-chip"><span class="ck">✓</span> White space ok</div>
+      <div class="check-chip"><span class="ck">✓</span> Text readable</div>
+      <div class="check-chip"><span class="ck">✓</span> Gradient correct</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════ 
+     SLIDE 13 — BACK COVER
+══════════════════════════════════ -->
+<div class="slide s13">
+  <div class="s13-bg"></div>
+  <div class="s01-grid"></div>
+  <div class="s13-content">
+    <div style="font-size:48px;margin-bottom:24px">🤖</div>
+    <div class="s13-title">Ready to Teach<br>the Future?</div>
+    <div class="s13-sub">Konsisten dengan brand = kepercayaan yang terbangun. Setiap postingan mewakili AI Mentoring.</div>
+
+    <div class="s13-info">
+      <div class="s13-info-item"><span class="s13-info-icon">📷</span>@aimentoring.official</div>
+      <div class="s13-divider"></div>
+      <div class="s13-info-item"><span class="s13-info-icon">🌐</span>sekolah.aimentoring.id</div>
+      <div class="s13-divider"></div>
+      <div class="s13-info-item"><span class="s13-info-icon">📞</span>0858-9926-9992</div>
+      <div class="s13-divider"></div>
+      <div class="s13-info-item"><span class="s13-info-icon">✉️</span>digitalmentoring.id@gmail.com</div>
+    </div>
+
+    <div class="s13-version">AI Mentoring · Mini Brand Guideline · Version 1.0 · 2025</div>
+  </div>
+</div>
+
+</div><!-- /slides-wrapper -->
+
+<script>
+// Smooth-scroll nav dots to corresponding slide
+const dots = document.querySelectorAll('.nav-dot');
+const slides = document.querySelectorAll('.slide');
+dots.forEach((dot, i) => {
+  dot.addEventListener('click', () => {
+    if (slides[i]) slides[i].scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+// Highlight active dot on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const idx = Array.from(slides).indexOf(entry.target);
+      dots.forEach((d, i) => {
+        d.style.background = i === idx ? 'var(--blue-primary)' : 'rgba(255,255,255,0.2)';
+        d.style.transform = i === idx ? 'scale(1.4)' : 'scale(1)';
+      });
+    }
+  });
+}, { threshold: 0.4 });
+slides.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
