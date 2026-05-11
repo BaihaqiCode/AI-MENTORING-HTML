@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI Mentoring — Mini Brand Guideline 2025</title>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 <style>
 :root {
   --blue-primary: #0A84FF;
@@ -35,7 +36,8 @@ body {
 
 /* ── SLIDE SYSTEM ── */
 .slide {
-  width: 1280px;
+  width: 100%; /* Diperbarui agar responsif */
+  max-width: 1280px; /* Batas maksimal lebar */
   min-height: 720px;
   position: relative;
   overflow: hidden;
@@ -1166,6 +1168,7 @@ body {
   display: flex;
   gap: 10px;
   margin-top: 16px;
+  flex-wrap: wrap; /* Diubah agar tidak keluar layar */
 }
 .mood-tag {
   padding: 8px 16px;
@@ -1353,11 +1356,99 @@ body {
 /* Utility */
 .relative { position: relative; }
 .z1 { position: relative; z-index: 1; }
+
+/* ═══════════════════════════════════════
+   RESPONSIVE LAYOUT (MEDIA QUERIES)
+═══════════════════════════════════════ */
+
+/* ── TABLET (Max-width: 1024px) ── */
+@media screen and (max-width: 1024px) {
+  .slides-wrapper { padding: 100px 24px 60px; }
+  .slide { min-height: auto; }
+  .s02, .s03, .s04, .s05, .s06, .s07, .s08, .s09, .s10, .s11, .s12 { padding: 48px 40px; }
+  
+  /* Slide 01 */
+  .s01-title { font-size: 56px; }
+  .s01-orbit { width: 450px; height: 450px; }
+  .s01-orbit2 { width: 650px; height: 650px; }
+
+  /* Two Column Slides -> Column */
+  .s02, .s10 { flex-direction: column; gap: 40px; }
+  .s02-left, .s10-right { width: 100%; padding: 40px; }
+  .s02-right { padding: 0; }
+
+  /* Grids */
+  .personality-grid { grid-template-columns: repeat(3, 1fr); }
+  .tone-section { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .secondary-row { grid-template-columns: repeat(3, 1fr); }
+  .gradients-row { grid-template-columns: 1fr; }
+  .typo-grid, .mockup-row, .rules-grid { grid-template-columns: 1fr; }
+  .style-principles { grid-template-columns: repeat(2, 1fr); }
+  .elements-grid, .social-formats { grid-template-columns: repeat(3, 1fr); }
+
+  /* Photo Grid */
+  .photo-grid { grid-template-columns: 1fr 1fr; height: auto; }
+  .photo-cell.span2 { grid-column: 1 / 3; grid-row: auto; height: 300px; }
+  .photo-cell { height: 200px; }
+}
+
+/* ── MOBILE (Max-width: 768px) ── */
+@media screen and (max-width: 768px) {
+  .nav-bar { padding: 16px 20px; }
+  .nav-toc { display: none; }
+  .page-label { top: auto; bottom: 16px; right: 20px; opacity: 0.2; }
+  
+  .s02, .s03, .s04, .s05, .s06, .s07, .s08, .s09, .s10, .s11, .s12 { padding: 32px 20px; }
+
+  /* Slide 01 */
+  .s01-title { font-size: 36px; letter-spacing: -1px; }
+  .s01-sub { font-size: 14px; margin-bottom: 32px; }
+  .s01-meta { flex-direction: column; gap: 12px; }
+  .s01-orbit { width: 300px; height: 300px; }
+  .s01-orbit2 { width: 450px; height: 450px; }
+
+  /* Break down to 1 or 2 cols */
+  .overview-cards, .style-principles { grid-template-columns: 1fr; }
+  .personality-grid, .elements-grid, .social-formats, .secondary-row { grid-template-columns: repeat(2, 1fr); }
+  
+  /* Flex wrap */
+  .glass-demo, .neural-demo, .footer-demo, .checklist-section { 
+    flex-direction: column; align-items: flex-start; gap: 20px; 
+  }
+  .neural-demo, .footer-demo { text-align: center; align-items: center; }
+  .footer-socials { justify-content: center; flex-wrap: wrap; }
+  .footer-contact { text-align: center; }
+
+  /* Color Blocks */
+  .primary-swatches { flex-direction: column; height: auto; }
+  .swatch { padding: 20px; align-items: flex-start; }
+  .swatch:hover { flex: 1; }
+
+  /* Flyer */
+  .flyer-features { grid-template-columns: 1fr; }
+  .flyer-title-main { font-size: 22px; }
+  .flyer-students { height: auto; padding: 16px; flex-wrap: wrap; text-align: center; line-height: 1.6; }
+
+  /* Photo Grid */
+  .photo-grid { grid-template-columns: 1fr; }
+  .photo-cell.span2 { grid-column: 1 / 2; }
+
+  /* Cover Back */
+  .s13-title { font-size: 32px; }
+  .s13-info { flex-direction: column; gap: 16px; }
+  .s13-divider { display: none; }
+}
+
+/* ── SMALL MOBILE (Max-width: 480px) ── */
+@media screen and (max-width: 480px) {
+  .personality-grid, .elements-grid, .social-formats, .secondary-row { grid-template-columns: 1fr; }
+  .s01-title { font-size: 28px; }
+  .flyer-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav class="nav-bar">
   <div class="nav-logo">AI Mentoring</div>
   <div class="nav-label">Mini Brand Guideline 2025</div>
@@ -1379,9 +1470,6 @@ body {
 
 <div class="slides-wrapper">
 
-<!-- ══════════════════════════════════ 
-     SLIDE 01 — COVER
-══════════════════════════════════ -->
 <div class="slide s01">
   <div class="s01-bg"></div>
   <div class="s01-grid"></div>
@@ -1391,7 +1479,6 @@ body {
   <div class="s01-content">
     <div class="s01-eyebrow">Brand Guideline Document</div>
     <div>
-      <!-- Simplified AI logo in SVG -->
       <img src="asset/Logo Aideal Biru bgrmv.png" alt="" width="100" height="100">
     </div>
     <div class="s01-title">AI Mentoring</div>
@@ -1408,13 +1495,9 @@ body {
   </div>
 </div>
 
-<!-- ══════════════════════════════════ 
-     SLIDE 02 — BRAND OVERVIEW & LOGO
-══════════════════════════════════ -->
 <div class="slide s02">
   <span class="page-label" style="color:var(--text-muted)">01 / Brand Overview</span>
 
-  <!-- Left panel: logo showcase -->
   <div class="s02-left">
     <div class="s02-left-bg"></div>
     <div class="logo-showcase">
@@ -1446,7 +1529,6 @@ body {
     </div>
   </div>
 
-  <!-- Right panel: brand overview text -->
   <div class="s02-right">
     <span class="section-tag tag-blue">01 — Brand Overview</span>
     <h2 class="slide-heading">Where <span class="accent">AI Intelligence</span><br>Meets Education</h2>
@@ -1477,9 +1559,6 @@ body {
   </div>
 </div>
 
-<!-- ══════════════════════════════════ 
-     SLIDE 03 — BRAND PERSONALITY
-══════════════════════════════════ -->
 <div class="slide s03">
   <div class="s03-bg"></div>
   <div class="z1" style="width:100%">
@@ -1530,9 +1609,6 @@ body {
   </div>
 </div>
 
-<!-- ══════════════════════════════════ 
-     SLIDE 04 — COLOR PALETTE
-══════════════════════════════════ -->
 <div class="slide s04" style="min-height:760px">
   <span class="page-label" style="color:var(--text-muted)">03 / Color Palette</span>
   <span class="section-tag tag-blue">03 — Color System</span>
@@ -1611,9 +1687,6 @@ body {
   </div>
 </div>
 
-<!-- ══════════════════════════════════ 
-     SLIDE 05 — TYPOGRAPHY
-══════════════════════════════════ -->
 <div class="slide s05">
   <div class="s05-bg"></div>
   <div class="z1" style="width:100%">
@@ -1649,9 +1722,6 @@ body {
   </div>
 </div>
 
-<!-- ══════════════════════════════════ 
-     SLIDE 06 — VISUAL STYLE
-══════════════════════════════════ -->
 <div class="slide s06" style="min-height:720px">
   <span class="page-label" style="color:var(--text-muted)">05 / Visual Style</span>
   <span class="section-tag tag-blue">05 — Visual Style</span>
@@ -1680,7 +1750,6 @@ body {
     </div>
   </div>
 
-  <!-- Glassmorphism demo -->
   <div class="glass-demo">
     <div class="glass-demo-bg"></div>
     <div class="glass-card">
@@ -1700,7 +1769,7 @@ body {
     </div>
   </div>
 
-  <div style="margin-top:16px;display:flex;gap:12px;align-items:center">
+  <div style="margin-top:16px;display:flex;gap:12px;align-items:center;flex-wrap:wrap">
     <div style="font-size:11px;color:var(--text-muted);font-family:'Sora',sans-serif;font-weight:600;letter-spacing:1px;text-transform:uppercase">Shadow tokens:</div>
     <div style="background:white;border-radius:10px;padding:8px 16px;box-shadow:0 2px 8px rgba(0,0,0,0.06);font-size:11px;color:var(--text-mid)">Soft: 0 2px 8px rgba(0,0,0,0.06)</div>
     <div style="background:white;border-radius:10px;padding:8px 16px;box-shadow:0 8px 24px rgba(0,0,0,0.1);font-size:11px;color:var(--text-mid)">Medium: 0 8px 24px rgba(0,0,0,0.10)</div>
@@ -1709,9 +1778,6 @@ body {
   </div>
 </div>
 
-<!-- ══════════════════════════════════ 
-     SLIDE 07 — GRAPHIC ELEMENTS
-══════════════════════════════════ -->
 <div class="slide s07">
   <div class="s07-bg"></div>
   <div class="z1" style="width:100%">
@@ -1734,37 +1800,29 @@ body {
     </div>
 
     <div class="neural-demo">
-      <!-- Inline SVG neural network pattern -->
       <svg width="280" height="120" viewBox="0 0 280 120" fill="none" style="flex-shrink:0">
-        <!-- Layer 1 nodes -->
         <circle cx="30" cy="30" r="8" fill="rgba(10,132,255,0.5)" stroke="#0A84FF" stroke-width="1.5"/>
         <circle cx="30" cy="60" r="8" fill="rgba(10,132,255,0.5)" stroke="#0A84FF" stroke-width="1.5"/>
         <circle cx="30" cy="90" r="8" fill="rgba(10,132,255,0.5)" stroke="#0A84FF" stroke-width="1.5"/>
-        <!-- Layer 2 nodes -->
         <circle cx="100" cy="20" r="8" fill="rgba(139,92,255,0.5)" stroke="#8B5CFF" stroke-width="1.5"/>
         <circle cx="100" cy="50" r="8" fill="rgba(139,92,255,0.5)" stroke="#8B5CFF" stroke-width="1.5"/>
         <circle cx="100" cy="80" r="8" fill="rgba(139,92,255,0.5)" stroke="#8B5CFF" stroke-width="1.5"/>
         <circle cx="100" cy="100" r="8" fill="rgba(139,92,255,0.5)" stroke="#8B5CFF" stroke-width="1.5"/>
-        <!-- Layer 3 nodes -->
         <circle cx="180" cy="35" r="8" fill="rgba(55,214,255,0.5)" stroke="#37D6FF" stroke-width="1.5"/>
         <circle cx="180" cy="65" r="8" fill="rgba(55,214,255,0.5)" stroke="#37D6FF" stroke-width="1.5"/>
         <circle cx="180" cy="95" r="8" fill="rgba(55,214,255,0.5)" stroke="#37D6FF" stroke-width="1.5"/>
-        <!-- Output -->
         <circle cx="250" cy="60" r="10" fill="rgba(10,132,255,0.8)" stroke="#0A84FF" stroke-width="2"/>
-        <!-- Connections L1→L2 -->
         <line x1="38" y1="30" x2="92" y2="20" stroke="rgba(10,132,255,0.25)" stroke-width="1"/>
         <line x1="38" y1="30" x2="92" y2="50" stroke="rgba(10,132,255,0.25)" stroke-width="1"/>
         <line x1="38" y1="60" x2="92" y2="50" stroke="rgba(10,132,255,0.35)" stroke-width="1.5"/>
         <line x1="38" y1="60" x2="92" y2="80" stroke="rgba(10,132,255,0.25)" stroke-width="1"/>
         <line x1="38" y1="90" x2="92" y2="80" stroke="rgba(10,132,255,0.25)" stroke-width="1"/>
         <line x1="38" y1="90" x2="92" y2="100" stroke="rgba(10,132,255,0.25)" stroke-width="1"/>
-        <!-- Connections L2→L3 -->
         <line x1="108" y1="20" x2="172" y2="35" stroke="rgba(139,92,255,0.25)" stroke-width="1"/>
         <line x1="108" y1="50" x2="172" y2="35" stroke="rgba(139,92,255,0.35)" stroke-width="1.5"/>
         <line x1="108" y1="50" x2="172" y2="65" stroke="rgba(139,92,255,0.25)" stroke-width="1"/>
         <line x1="108" y1="80" x2="172" y2="65" stroke="rgba(139,92,255,0.25)" stroke-width="1"/>
         <line x1="108" y1="80" x2="172" y2="95" stroke="rgba(139,92,255,0.35)" stroke-width="1.5"/>
-        <!-- L3→Output -->
         <line x1="188" y1="35" x2="240" y2="60" stroke="rgba(55,214,255,0.3)" stroke-width="1"/>
         <line x1="188" y1="65" x2="240" y2="60" stroke="rgba(55,214,255,0.5)" stroke-width="2"/>
         <line x1="188" y1="95" x2="240" y2="60" stroke="rgba(55,214,255,0.3)" stroke-width="1"/>
@@ -1787,16 +1845,12 @@ body {
   </div>
 </div>
 
-<!-- ══════════════════════════════════ 
-     SLIDE 08 — SOCIAL MEDIA SYSTEM
-══════════════════════════════════ -->
 <div class="slide s08" style="min-height:780px">
   <span class="page-label" style="color:var(--text-muted)">07 / Social Media</span>
   <span class="section-tag tag-purple">07 — Social Media System</span>
   <h2 class="slide-heading">Content <span class="accent">Format Guide</span></h2>
 
   <div class="social-formats">
-    <!-- Feed 4:5 -->
     <div class="format-card">
       <div class="format-preview" style="background:var(--grad-main)">
         <div style="position:relative;z-index:1;text-align:center">
@@ -1811,7 +1865,6 @@ body {
       </div>
     </div>
 
-    <!-- Story 9:16 -->
     <div class="format-card">
       <div class="format-preview" style="background:linear-gradient(160deg,#0066FF,#8B5CFF)">
         <div style="position:relative;z-index:1;text-align:center">
@@ -1825,7 +1878,6 @@ body {
       </div>
     </div>
 
-    <!-- Carousel 1:1 -->
     <div class="format-card">
       <div class="format-preview" style="background:var(--white-bg);border-bottom:1px solid var(--gray-light)">
         <div style="position:relative;z-index:1;text-align:center">
@@ -1839,7 +1891,6 @@ body {
       </div>
     </div>
 
-    <!-- Reels Cover -->
     <div class="format-card">
       <div class="format-preview" style="background:linear-gradient(135deg,#0A1B5E,#123DFF)">
         <div style="position:relative;z-index:1;text-align:center">
@@ -1853,7 +1904,6 @@ body {
       </div>
     </div>
 
-    <!-- Landscape Banner -->
     <div class="format-card">
       <div class="format-preview" style="background:linear-gradient(90deg,#0A1B5E,#8B5CFF)">
         <div style="position:relative;z-index:1;text-align:center">
@@ -1868,7 +1918,6 @@ body {
     </div>
   </div>
 
-  <!-- Footer system -->
   <div style="margin-top:4px">
     <div class="color-section-title" style="color:var(--text-muted)">Consistent Post Footer</div>
     <div class="footer-demo">
@@ -1893,9 +1942,6 @@ body {
   </div>
 </div>
 
-<!-- ══════════════════════════════════ 
-     SLIDE 09 — SOCIAL LAYOUT MOCKUPS
-══════════════════════════════════ -->
 <div class="slide s09">
   <div class="s09-bg"></div>
   <div class="z1" style="width:100%">
@@ -1903,7 +1949,6 @@ body {
     <h2 class="slide-heading" style="color:white">Social Media <span style="background:var(--grad-cyan);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Mockups</span></h2>
 
     <div class="mockup-row">
-      <!-- Feed mockup -->
       <div class="mockup-phone-wrap">
         <div class="mockup-label">Instagram Feed 4:5</div>
         <div class="phone-frame">
@@ -1931,7 +1976,6 @@ body {
         </div>
       </div>
 
-      <!-- Story mockup -->
       <div class="mockup-phone-wrap">
         <div class="mockup-label">Instagram Story 9:16</div>
         <div class="phone-frame" style="width:200px">
@@ -1964,7 +2008,6 @@ body {
         </div>
       </div>
 
-      <!-- Carousel mockup -->
       <div class="mockup-phone-wrap">
         <div class="mockup-label">Carousel Slide</div>
         <div class="phone-frame">
@@ -2001,9 +2044,6 @@ body {
   </div>
 </div>
 
-<!-- ══════════════════════════════════ 
-     SLIDE 10 — WORKSHOP FLYER
-══════════════════════════════════ -->
 <div class="slide s10">
   <span class="page-label" style="color:var(--text-muted)">09 / Workshop Flyer</span>
 
@@ -2045,7 +2085,6 @@ body {
   </div>
 
   <div class="s10-right">
-    <!-- Flyer mockup -->
     <div class="flyer-mockup">
       <div class="flyer-top">
         <div class="flyer-top-bg"></div>
@@ -2097,9 +2136,6 @@ body {
   </div>
 </div>
 
-<!-- ══════════════════════════════════ 
-     SLIDE 11 — PHOTOGRAPHY DIRECTION
-══════════════════════════════════ -->
 <div class="slide s11">
   <div class="s11-bg"></div>
   <div class="z1" style="width:100%">
@@ -2153,9 +2189,6 @@ body {
   </div>
 </div>
 
-<!-- ══════════════════════════════════ 
-     SLIDE 12 — CONSISTENCY GUIDELINES
-══════════════════════════════════ -->
 <div class="slide s12" style="min-height:720px">
   <span class="page-label" style="color:var(--text-muted)">11 / Guidelines</span>
   <span class="section-tag tag-blue">11 — Consistency Rules</span>
@@ -2210,9 +2243,6 @@ body {
   </div>
 </div>
 
-<!-- ══════════════════════════════════ 
-     SLIDE 13 — BACK COVER
-══════════════════════════════════ -->
 <div class="slide s13">
   <div class="s13-bg"></div>
   <div class="s01-grid"></div>
@@ -2235,31 +2265,6 @@ body {
   </div>
 </div>
 
-</div><!-- /slides-wrapper -->
-
-<script>
-// Smooth-scroll nav dots to corresponding slide
-const dots = document.querySelectorAll('.nav-dot');
-const slides = document.querySelectorAll('.slide');
-dots.forEach((dot, i) => {
-  dot.addEventListener('click', () => {
-    if (slides[i]) slides[i].scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
-});
-
-// Highlight active dot on scroll
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const idx = Array.from(slides).indexOf(entry.target);
-      dots.forEach((d, i) => {
-        d.style.background = i === idx ? 'var(--blue-primary)' : 'rgba(255,255,255,0.2)';
-        d.style.transform = i === idx ? 'scale(1.4)' : 'scale(1)';
-      });
-    }
-  });
-}, { threshold: 0.4 });
-slides.forEach(s => observer.observe(s));
-</script>
+</div><script src="script.js"></script>
 </body>
 </html>
