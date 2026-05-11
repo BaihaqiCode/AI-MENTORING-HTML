@@ -664,7 +664,19 @@ body {
   display: flex;
   align-items: center;
   gap: 40px;
+  width: 100%; /* Pastikan kontainer mengambil ruang penuh */
 }
+
+/* Pastikan SVG tidak keluar batas di layar sempit */
+.neural-demo svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.neural-desc {
+  flex: 1; /* Biarkan deskripsi mengambil sisa ruang yang ada */
+}
+
 .neural-desc h4 {
   font-family: 'Sora', sans-serif;
   font-size: 15px;
@@ -672,15 +684,42 @@ body {
   color: white;
   margin-bottom: 8px;
 }
-.neural-desc p { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.6; max-width: 300px; }
+
+.neural-desc p {
+  font-size: 12px; 
+  color: rgba(255,255,255,0.5); 
+  line-height: 1.6; 
+  max-width: 100%; /* Diperbarui: Hapus batasan kaku 300px agar responsif */
+}
+
 .do-dont {
   display: flex;
-  gap: 16px;
-  margin-top: 12px;
+  flex-wrap: wrap; /* Diperbarui: Izinkan tag turun ke baris baru jika layar sempit */
+  gap: 10px; /* Jarak sedikit dirapatkan */
+  margin-top: 16px;
 }
-.do-tag { font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 100px; background: rgba(52,199,89,0.15); color: #34C759; border: 1px solid rgba(52,199,89,0.3); }
-.dont-tag { font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 100px; background: rgba(255,59,48,0.12); color: #FF3B30; border: 1px solid rgba(255,59,48,0.25); }
 
+.do-tag { 
+  font-size: 11px; 
+  font-weight: 700; 
+  padding: 6px 14px; /* Padding disesuaikan agar lebih rapi */
+  border-radius: 100px; 
+  background: rgba(52,199,89,0.15); 
+  color: #34C759; 
+  border: 1px solid rgba(52,199,89,0.3); 
+  white-space: nowrap; /* Teks di dalam tag tidak akan terpotong aneh */
+}
+
+.dont-tag { 
+  font-size: 11px; 
+  font-weight: 700; 
+  padding: 6px 14px; 
+  border-radius: 100px; 
+  background: rgba(255,59,48,0.12); 
+  color: #FF3B30; 
+  border: 1px solid rgba(255,59,48,0.25); 
+  white-space: nowrap;
+}
 /* ═══════════════════════════════════════
    SLIDE 08 — SOCIAL MEDIA SYSTEM
 ═══════════════════════════════════════ */
