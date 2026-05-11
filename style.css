@@ -26,10 +26,9 @@ body {
 }
 
 /* ── SLIDE SYSTEM ── */
-/* ── SLIDE SYSTEM ── */
 .slide {
-  width: 100%;
-  max-width: 1280px;
+  width: 100%; /* Diperbarui agar responsif */
+  max-width: 1280px; /* Batas maksimal lebar */
   min-height: 720px;
   position: relative;
   overflow: hidden;
@@ -65,7 +64,7 @@ body {
   font-weight: 800;
   font-size: 18px;
   background: var(--grad-main);
-  background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: -0.5px;
 }
@@ -136,6 +135,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 12px;
+  padding: 10px 0px;
 }
 .s01-eyebrow::before, .s01-eyebrow::after {
   content: '';
@@ -150,7 +150,7 @@ body {
   font-weight: 800;
   line-height: 1.0;
   background: linear-gradient(135deg, #fff 0%, #a8c8ff 40%, var(--cyan) 100%);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: -3px;
   margin-bottom: 16px;
@@ -171,6 +171,7 @@ body {
   color: rgba(255,255,255,0.3);
   font-weight: 500;
   letter-spacing: 1px;
+  padding-bottom: 10px;
 }
 .s01-meta span { display: flex; align-items: center; gap: 6px; }
 .s01-meta .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--blue-primary); }
@@ -656,7 +657,19 @@ body {
   display: flex;
   align-items: center;
   gap: 40px;
+  width: 100%; /* Pastikan kontainer mengambil ruang penuh */
 }
+
+/* Pastikan SVG tidak keluar batas di layar sempit */
+.neural-demo svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.neural-desc {
+  flex: 1; /* Biarkan deskripsi mengambil sisa ruang yang ada */
+}
+
 .neural-desc h4 {
   font-family: 'Sora', sans-serif;
   font-size: 15px;
@@ -664,15 +677,42 @@ body {
   color: white;
   margin-bottom: 8px;
 }
-.neural-desc p { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.6; max-width: 300px; }
+
+.neural-desc p {
+  font-size: 12px; 
+  color: rgba(255,255,255,0.5); 
+  line-height: 1.6; 
+  max-width: 100%; /* Diperbarui: Hapus batasan kaku 300px agar responsif */
+}
+
 .do-dont {
   display: flex;
-  gap: 16px;
-  margin-top: 12px;
+  flex-wrap: wrap; /* Diperbarui: Izinkan tag turun ke baris baru jika layar sempit */
+  gap: 10px; /* Jarak sedikit dirapatkan */
+  margin-top: 16px;
 }
-.do-tag { font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 100px; background: rgba(52,199,89,0.15); color: #34C759; border: 1px solid rgba(52,199,89,0.3); }
-.dont-tag { font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 100px; background: rgba(255,59,48,0.12); color: #FF3B30; border: 1px solid rgba(255,59,48,0.25); }
 
+.do-tag { 
+  font-size: 11px; 
+  font-weight: 700; 
+  padding: 6px 14px; /* Padding disesuaikan agar lebih rapi */
+  border-radius: 100px; 
+  background: rgba(52,199,89,0.15); 
+  color: #34C759; 
+  border: 1px solid rgba(52,199,89,0.3); 
+  white-space: nowrap; /* Teks di dalam tag tidak akan terpotong aneh */
+}
+
+.dont-tag { 
+  font-size: 11px; 
+  font-weight: 700; 
+  padding: 6px 14px; 
+  border-radius: 100px; 
+  background: rgba(255,59,48,0.12); 
+  color: #FF3B30; 
+  border: 1px solid rgba(255,59,48,0.25); 
+  white-space: nowrap;
+}
 /* ═══════════════════════════════════════
    SLIDE 08 — SOCIAL MEDIA SYSTEM
 ═══════════════════════════════════════ */
@@ -1160,6 +1200,7 @@ body {
   display: flex;
   gap: 10px;
   margin-top: 16px;
+  flex-wrap: wrap; /* Diubah agar tidak keluar layar */
 }
 .mood-tag {
   padding: 8px 16px;
@@ -1349,44 +1390,35 @@ body {
 .z1 { position: relative; z-index: 1; }
 
 /* ═══════════════════════════════════════
-   RESPONSIVE LAYOUT (TABLET & MOBILE)
+   RESPONSIVE LAYOUT (MEDIA QUERIES)
 ═══════════════════════════════════════ */
 
 /* ── TABLET (Max-width: 1024px) ── */
 @media screen and (max-width: 1024px) {
-  .slides-wrapper {
-    padding: 100px 24px 60px;
-  }
-  .slide {
-    min-height: auto;
-  }
-  .s02, .s03, .s04, .s05, .s06, .s07, .s08, .s09, .s10, .s11, .s12 {
-    padding: 48px 40px;
-  }
+  .slides-wrapper { padding: 100px 24px 60px; }
+  .slide { min-height: auto; }
+  .s02, .s03, .s04, .s05, .s06, .s07, .s08, .s09, .s10, .s11, .s12 { padding: 48px 40px; }
   
   /* Slide 01 */
   .s01-title { font-size: 56px; }
   .s01-orbit { width: 450px; height: 450px; }
   .s01-orbit2 { width: 650px; height: 650px; }
 
-  /* Slide 02 & 10 (Ubah dari Row ke Column) */
+  /* Two Column Slides -> Column */
   .s02, .s10 { flex-direction: column; gap: 40px; }
   .s02-left, .s10-right { width: 100%; padding: 40px; }
   .s02-right { padding: 0; }
 
-  /* Grid Adjustments */
+  /* Grids */
   .personality-grid { grid-template-columns: repeat(3, 1fr); }
   .tone-section { flex-direction: column; align-items: flex-start; gap: 24px; }
-  
   .secondary-row { grid-template-columns: repeat(3, 1fr); }
   .gradients-row { grid-template-columns: 1fr; }
-  
   .typo-grid, .mockup-row, .rules-grid { grid-template-columns: 1fr; }
-  
   .style-principles { grid-template-columns: repeat(2, 1fr); }
   .elements-grid, .social-formats { grid-template-columns: repeat(3, 1fr); }
 
-  /* Photography Grid */
+  /* Photo Grid */
   .photo-grid { grid-template-columns: 1fr 1fr; height: auto; }
   .photo-cell.span2 { grid-column: 1 / 3; grid-row: auto; height: 300px; }
   .photo-cell { height: 200px; }
@@ -1395,12 +1427,10 @@ body {
 /* ── MOBILE (Max-width: 768px) ── */
 @media screen and (max-width: 768px) {
   .nav-bar { padding: 16px 20px; }
-  .nav-toc { display: none; } /* Sembunyikan titik navigasi di layar sempit */
+  .nav-toc { display: none; }
   .page-label { top: auto; bottom: 16px; right: 20px; opacity: 0.2; }
   
-  .s02, .s03, .s04, .s05, .s06, .s07, .s08, .s09, .s10, .s11, .s12 {
-    padding: 32px 20px;
-  }
+  .s02, .s03, .s04, .s05, .s06, .s07, .s08, .s09, .s10, .s11, .s12 { padding: 32px 20px; }
 
   /* Slide 01 */
   .s01-title { font-size: 36px; letter-spacing: -1px; }
@@ -1409,36 +1439,33 @@ body {
   .s01-orbit { width: 300px; height: 300px; }
   .s01-orbit2 { width: 450px; height: 450px; }
 
-  /* Grids to 1 or 2 columns */
+  /* Break down to 1 or 2 cols */
   .overview-cards, .style-principles { grid-template-columns: 1fr; }
   .personality-grid, .elements-grid, .social-formats, .secondary-row { grid-template-columns: repeat(2, 1fr); }
   
-  /* Elements wrapping */
+  /* Flex wrap */
   .glass-demo, .neural-demo, .footer-demo, .checklist-section { 
-    flex-direction: column; 
-    align-items: flex-start; 
-    gap: 20px; 
+    flex-direction: column; align-items: flex-start; gap: 20px; 
   }
-  .neural-demo { text-align: center; align-items: center; }
-  .footer-demo { text-align: center; align-items: center; }
+  .neural-demo, .footer-demo { text-align: center; align-items: center; }
   .footer-socials { justify-content: center; flex-wrap: wrap; }
   .footer-contact { text-align: center; }
 
-  /* Color Palette Wrap */
+  /* Color Blocks */
   .primary-swatches { flex-direction: column; height: auto; }
   .swatch { padding: 20px; align-items: flex-start; }
-  .swatch:hover { flex: 1; } /* Matikan animasi hover expand di HP */
+  .swatch:hover { flex: 1; }
 
   /* Flyer */
   .flyer-features { grid-template-columns: 1fr; }
   .flyer-title-main { font-size: 22px; }
   .flyer-students { height: auto; padding: 16px; flex-wrap: wrap; text-align: center; line-height: 1.6; }
 
-  /* Photo Grid Mobile */
+  /* Photo Grid */
   .photo-grid { grid-template-columns: 1fr; }
   .photo-cell.span2 { grid-column: 1 / 2; }
 
-  /* Slide 13 (Back Cover) */
+  /* Cover Back */
   .s13-title { font-size: 32px; }
   .s13-info { flex-direction: column; gap: 16px; }
   .s13-divider { display: none; }
@@ -1446,10 +1473,7 @@ body {
 
 /* ── SMALL MOBILE (Max-width: 480px) ── */
 @media screen and (max-width: 480px) {
-  /* Ubah sisa elemen grid menjadi 1 kolom penuh untuk layar yang sangat kecil */
-  .personality-grid, .elements-grid, .social-formats, .secondary-row { 
-    grid-template-columns: 1fr; 
-  }
+  .personality-grid, .elements-grid, .social-formats, .secondary-row { grid-template-columns: 1fr; }
   .s01-title { font-size: 28px; }
   .flyer-header { flex-direction: column; align-items: flex-start; gap: 12px; }
 }
